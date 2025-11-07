@@ -1,25 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import homeImage from "../assets/home.jpg";
+import { Cpu, Drone, Gpu, MemoryStick, Microchip, Code } from "lucide-react";
 
 export default function NavBar() {
+
+  const [displayIcon, setDisplayIcon] = useState("Cpu");
+
   const linkClasses =
-    "px-6 py-3 rounded-full transition-all duration-300 hover:bg-white hover:text-sky-600 font-semibold";
+    "px-2 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-sky-600 font-semibold text-center";
+
+  const icons = [ "Cpu", "Drone", "Gpu", "MemoryStick", "Microchip", "Code" ];
+
+  setInterval(() => {
+    const lastIndex = icons.length - 1;
+    const currentIndex = icons.indexOf(displayIcon);
+    const nextIndex = lastIndex === currentIndex ? 0 : currentIndex + 1
+    setDisplayIcon(icons[nextIndex]);
+  }, 3000);
 
   return (
-    <nav className="flex justify-center px-4">
-      <div className="bg-gradient-to-r from-sky-400 to-blue-400 text-white p-1 mx-auto shadow-lg mt-4 rounded-3xl w-full max-w-9xl">
-        <div className="flex justify-between items-center px-6">
+    <nav className="flex fixed top-0 right-0 left-0 z-50 justify-center px-4">
+      <div className="bg-gradient-to-r h-13 from-sky-400 to-blue-400 text-white mx-auto shadow-lg mt-4 rounded-3xl w-full max-w-9xl relative flex justify-center items-center">
+        <div className="flex w-full justify-between items-center px-2">
           <div className="flex items-center gap-4">
             <img
               src={homeImage}
               alt="Department Logo"
-              className="w-12 h-12 rounded-full border-2 border-white shadow-md"
+              className="w-10 h-10 rounded-full border-2 border-white shadow-md"
             />
         
           </div>
 
-          <div className="flex space-x-1">
+          <div className="md:hidden">
+            {displayIcon === "Cpu" && <Cpu />}
+            {displayIcon === "Gpu" && <Gpu />}
+            {displayIcon === "MemoryStick" && <MemoryStick />}
+            {displayIcon === "Drone" && <Drone />}
+            {displayIcon === "Microchip" && <Microchip />}
+            {displayIcon === "Code" && <Code />}
+          </div>
+
+          <div className="md:flex hidden rounded-3xl gap-2 text-sm">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -29,17 +51,6 @@ export default function NavBar() {
               }
             >
               Home
-            </NavLink>
-
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `${linkClasses} ${
-                  isActive ? "bg-white text-sky-600 shadow-md" : "text-white"
-                }`
-              }
-            >
-              About
             </NavLink>
 
             <NavLink
@@ -54,17 +65,6 @@ export default function NavBar() {
             </NavLink>
 
             <NavLink
-              to="/staff"
-              className={({ isActive }) =>
-                `${linkClasses} ${
-                  isActive ? "bg-white text-sky-600 shadow-md" : "text-white"
-                }`
-              }
-            >
-              Staff
-            </NavLink>
-
-            <NavLink
               to="/events"
               className={({ isActive }) =>
                 `${linkClasses} ${
@@ -76,14 +76,14 @@ export default function NavBar() {
             </NavLink>
 
             <NavLink
-              to="/contact"
+              to="/about"
               className={({ isActive }) =>
                 `${linkClasses} ${
                   isActive ? "bg-white text-sky-600 shadow-md" : "text-white"
                 }`
               }
             >
-              Contact
+              About
             </NavLink>
           </div>
         </div>
