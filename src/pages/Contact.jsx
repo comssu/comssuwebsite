@@ -1,10 +1,9 @@
-// src/pages/About.jsx
 import React from 'react';
 
-export default function Staff() {
+export default function Conatct() {
   return (
     <div className="max-w-3xl mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-4">Staff</h1>
+      <h1 className="text-3xl font-bold mb-4">Conatct Us</h1>
       <p className="mb-4">
         Welcome to the department website. This page is about our mission, values, and what we do.
       </p>
@@ -14,5 +13,3 @@ export default function Staff() {
     </div>
   );
 }
-
-

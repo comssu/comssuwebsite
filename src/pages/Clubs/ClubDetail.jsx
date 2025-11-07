@@ -1,4 +1,3 @@
-// src/pages/Clubs/ClubDetail.jsx
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { clubs } from '../../data/clubs'

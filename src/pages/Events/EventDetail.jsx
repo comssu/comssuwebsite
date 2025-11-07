@@ -1,4 +1,3 @@
-// src/pages/Events/EventDetail.jsx
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { events } from '../../data/events'

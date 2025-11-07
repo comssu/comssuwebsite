@@ -1,7 +1,8 @@
 // src/App.jsx
 import React, { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import NavBar from './components/Navbar'
 import NotFound from './pages/NotFound'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -13,28 +14,29 @@ const ClubDetail = lazy(() => import('./pages/Clubs/ClubDetail'))
 const EventsList = lazy(() => import('./pages/Events/EventsList'))
 const EventDetail = lazy(() => import('./pages/Events/EventDetail'))
 
-
 export default function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-100 flex flex-col">
       <NavBar />
-      <main className="p-4">
-        <Suspense fallback={<div>Loading...</div>}>
+      <main className="flex-1">
+        <Suspense fallback={
+          <div className="flex items-center justify-center h-64">
+            <div className="text-white text-xl">Loading...</div>
+          </div>
+        }>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-
-
+            <Route path="/clubs/:clubId" element={<ClubDetail />} />
             <Route path="/events" element={<EventsList />} />
             <Route path="/events/:eventId" element={<EventDetail />} />
-
             <Route path="/staff" element={<Staff />} />
             <Route path="/contact" element={<Contact />} />
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
+      <Footer />  
     </div>
   )
 }
