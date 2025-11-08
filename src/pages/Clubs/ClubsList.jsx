@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { clubs } from '../../data/clubs';
 import Footer from '../../components/Footer'
-import NavBar from '../../components/Navbar';
+import NavBar from '../../components/NavBar';
 
 export default function ClubsList() {
   return (

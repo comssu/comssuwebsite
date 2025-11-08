@@ -1,54 +1,83 @@
 import React from "react";
 import homeImage from "../assets/bg-2.png";
 import { Link } from "react-router-dom";
-import NavBar from "../components/Navbar";
+import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { Users, GraduationCap, BookOpen } from "lucide-react";
 
 export default function Home() {
   return (
     <>
-    <NavBar />
-    <main className="flex flex-col fixed top-0 bottom-0 left-0 right-0 bg-gradient-to-br from-blue-100 to-blue-100">
+      <NavBar />
+      <main className="flex flex-col fixed top-0 bottom-0 left-0 right-0 bg-gradient-to-br from-blue-100 to-blue-100">
 
-      <div className="absolute top-0 left-0 w-72 h-72 bg-sky-500 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-40"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 rounded-full translate-x-1/3 translate-y-1/3 opacity-50"></div>
-      <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-sky-300 rounded-full opacity-30"></div>
-      
-      <div className="z-10 w-full sm:px-10 h-full flex sm:flex-row flex-col justify-center items-center gap-5 md:justify-between">
+        <div className="absolute top-0 left-0 w-72 h-72 bg-sky-500 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-40"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 rounded-full translate-x-1/3 translate-y-1/3 opacity-50"></div>
+        <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-sky-300 rounded-full opacity-30"></div>
+        
+        <div className="z-10 w-full sm:px-10 h-full flex sm:flex-row flex-col justify-center items-center gap-5 md:justify-between">
 
-        <div className="max-w-2xl z-10 flex flex-col gap-2">
-          <h1 className="text-2xl font-black md:text-4xl leading-tight">
-            <span className="text-sky-600 block">Welcome to the </span>
-            <span className="text-gray-900 block">Computer Science</span>
-            <span className="text-gray-800 block">Official Website</span>
-          </h1>
-          <div className="flex gap-2">
-            <Link
-              to="/about"
-              className="inline-flex items-center justify-center px-6 py-3 sm:px-3 sm: bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg sm:text-sm md:text-xl md:px-6"
-            >
-              Learn More
-            </Link>
-            <Link
-              to="/clubs"
-              className="inline-flex items-center justify-center px-6 py-3 sm:px-3 bg-white hover:bg-gray-50 text-sky-600 font-bold rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 border border-sky-200 text-lg sm:text-sm md:text-xl md:px-6"
-            >
-              Explore Clubs
-            </Link>
+          <div className="max-w-2xl z-10 flex flex-col gap-4">
+            <h1 className="text-2xl font-black md:text-4xl leading-tight p-4">
+              <span className="text-sky-600 block">Welcome to the </span>
+              <span className="text-gray-900 block">Computer Science</span>
+              <span className="text-gray-800 block">Official Website</span>
+            </h1>
+            
+            <div className="flex gap-2 mb-6">
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center px-6 py-3 sm:px-3 sm: bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-lg sm:text-sm md:text-xl md:px-6"
+              >
+                Learn More
+              </Link>
+              <Link
+                to="/clubs"
+                className="inline-flex items-center justify-center px-6 py-3 sm:px-3 bg-white hover:bg-gray-50 text-sky-600 font-bold rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 border border-sky-200 text-lg sm:text-sm md:text-xl md:px-6"
+              >
+                Explore Clubs
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-3 gap-6 max-w-md">
+
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <Users className="w-8 h-8 text-sky-600" />
+                </div>
+                <div className="text-2xl font-bold text-gray-800 mb-1">500+</div>
+                <div className="text-sm text-gray-600 font-medium">Total Students</div>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <GraduationCap className="w-8 h-8 text-blue-600" />
+                </div>
+                <div className="text-2xl font-bold text-gray-800 mb-1">10+</div>
+                <div className="text-sm text-gray-600 font-medium">Lecturers</div>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <BookOpen className="w-8 h-8 text-cyan-600" />
+                </div>
+                <div className="text-2xl font-bold text-gray-800 mb-1">35+</div>
+                <div className="text-sm text-gray-600 font-medium">Courses Offered</div>
+              </div>
+            </div>
+
           </div>
 
+          <div className="w-[80%] max-w-80 aspect-square rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-none">
+            <img
+              src={homeImage}
+              alt="Department Building"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
-
-        <div className="w-[70%] max-w-80 aspect-square rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-white curs">
-          <img
-            src={homeImage}
-            alt="Department Building"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </main>
-    <Footer />
+      </main>
+      <Footer />
     </>
   );
 }
