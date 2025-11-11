@@ -21,7 +21,7 @@ export default function NavBar() {
 
   return (
     <nav className="flex fixed top-0 right-0 left-0 z-50 justify-center px-4">
-      <div className="bg-gradient-to-r h-13 from-sky-400 to-blue-400 text-white mx-auto shadow-lg mt-4 rounded-3xl w-full max-w-9xl relative flex justify-center items-center">
+      <div className="bg-linear-to-r from-sky-400 to-blue-400 h-13 text-white mx-auto shadow-sm mt-4 rounded-3xl w-full max-w-9xl relative flex justify-center items-center">
         <div className="flex w-full justify-between items-center px-2">
           <div className="flex items-center gap-4">
             <img

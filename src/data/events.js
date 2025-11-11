@@ -1,64 +1,64 @@
 export const events = [
-  {
-    id: 1,
-    title: "Commencement of First Semester",
-    date: "Nov 3, 2025",
-    semester: "First Semester",
-    image: "/images/semestercommencement.jpg",
-    summary: "The new academic year begins with the official start of the first semester.",
-    description: `The Commencement of the First Semester signals the official reopening of lectures, labs, and departmental services for the 2025/2026 academic year. Students — both new and returning — arrive on campus, register for classes, and begin settling into their schedules. Faculty use this period to share course outlines, expectations, and assessment plans so students can plan their semester effectively.
+  // {
+  //   id: 1,
+  //   title: "Commencement of First Semester",
+  //   date: "Nov 3, 2025",
+  //   semester: "First Semester",
+  //   image: "/images/semestercommencement.jpg",
+  //   summary: "The new academic year begins with the official start of the first semester.",
+  //   description: `The Commencement of the First Semester signals the official reopening of lectures, labs, and departmental services for the 2025/2026 academic year. Students — both new and returning — arrive on campus, register for classes, and begin settling into their schedules. Faculty use this period to share course outlines, expectations, and assessment plans so students can plan their semester effectively.
     
-    During the opening week, students receive introductions to support services such as advising, library orientation, and IT resources that will be essential throughout the term. Orientation sessions include campus logistics, departmental rules, and safety protocols, creating a smooth transition into university life. Staff and student leaders often coordinate welcome activities to help newcomers feel at home and informed.
+  //   During the opening week, students receive introductions to support services such as advising, library orientation, and IT resources that will be essential throughout the term. Orientation sessions include campus logistics, departmental rules, and safety protocols, creating a smooth transition into university life. Staff and student leaders often coordinate welcome activities to help newcomers feel at home and informed.
 
-    Administratively, the commencement period is when final timetable adjustments, lab allocations, and group assignments get confirmed. Departments also outline opportunities for extracurricular participation, research, and mentorship so students can balance academics with personal development. Clear communication during this time helps minimize confusion later in the semester.
+  //   Administratively, the commencement period is when final timetable adjustments, lab allocations, and group assignments get confirmed. Departments also outline opportunities for extracurricular participation, research, and mentorship so students can balance academics with personal development. Clear communication during this time helps minimize confusion later in the semester.
 
-    Overall, the commencement is more than a date — it is a shared starting point for academic growth, social connection, and setting goals for the months ahead. Students are encouraged to attend orientation events, ask questions, and begin forming study groups, which often prove invaluable as courses progress.
+  //   Overall, the commencement is more than a date — it is a shared starting point for academic growth, social connection, and setting goals for the months ahead. Students are encouraged to attend orientation events, ask questions, and begin forming study groups, which often prove invaluable as courses progress.
 
-    The energy and optimism of this period set the tone for the entire academic year, creating a foundation for success in both academic pursuits and personal development within the university community.`,
-    keyTakeaways: [
-      "Understand the academic calendar and important dates for the semester",
-      "Meet faculty members and department leadership",
-      "Learn about curriculum changes and new program offerings",
-      "Get oriented with campus resources and support services"
-    ],
-    whatToExpect: [
-      "Welcome address from the Dean and department heads",
-      "Faculty introductions and course overview sessions",
-      "Campus tour and facility orientations",
-      "Registration assistance and timetable finalization",
-      "Q&A sessions with academic advisors"
-    ]
-  },
-  {
-    id: 2,
-    title: "Society Meeting",
-    date: "Nov 10, 2025",
-    semester: "First Semester",
-    image: "/images/meeting.jpg",
-    summary: "The first departmental society meeting of the semester.",
-    description: `The Society Meeting gathers students, society executives, and faculty advisors to outline the semester's agenda and solicit input from members. It typically starts with brief reports from officers about planned activities, committee openings, and volunteer opportunities.
+  //   The energy and optimism of this period set the tone for the entire academic year, creating a foundation for success in both academic pursuits and personal development within the university community.`,
+  //   keyTakeaways: [
+  //     "Understand the academic calendar and important dates for the semester",
+  //     "Meet faculty members and department leadership",
+  //     "Learn about curriculum changes and new program offerings",
+  //     "Get oriented with campus resources and support services"
+  //   ],
+  //   whatToExpect: [
+  //     "Welcome address from the Dean and department heads",
+  //     "Faculty introductions and course overview sessions",
+  //     "Campus tour and facility orientations",
+  //     "Registration assistance and timetable finalization",
+  //     "Q&A sessions with academic advisors"
+  //   ]
+  // },
+  // {
+  //   id: 2,
+  //   title: "Society Meeting",
+  //   date: "Nov 10, 2025",
+  //   semester: "First Semester",
+  //   image: "/images/meeting.jpg",
+  //   summary: "The first departmental society meeting of the semester.",
+  //   description: `The Society Meeting gathers students, society executives, and faculty advisors to outline the semester's agenda and solicit input from members. It typically starts with brief reports from officers about planned activities, committee openings, and volunteer opportunities.
     
-    Attendees hear proposals for student-led initiatives, opportunities for collaboration with other societies, and strategies for academic support. The meeting often includes a Q&A segment so students can raise concerns about resources, timetabling, or society logistics. These interactions foster transparency and help executives prioritize initiatives that support the widest number of students.
+  //   Attendees hear proposals for student-led initiatives, opportunities for collaboration with other societies, and strategies for academic support. The meeting often includes a Q&A segment so students can raise concerns about resources, timetabling, or society logistics. These interactions foster transparency and help executives prioritize initiatives that support the widest number of students.
 
-    Practical outcomes from the meeting include event calendars, volunteer rosters, and the formation of small planning groups that work on hackathons, socials, and outreach activities. The society also uses this meeting to discuss funding applications and potential partnerships with industry or alumni. Getting involved early gives students leadership experience and helps build a supportive network.
+  //   Practical outcomes from the meeting include event calendars, volunteer rosters, and the formation of small planning groups that work on hackathons, socials, and outreach activities. The society also uses this meeting to discuss funding applications and potential partnerships with industry or alumni. Getting involved early gives students leadership experience and helps build a supportive network.
 
-    Finally, society meetings play a social role by connecting students across year groups and encouraging mentorship. New members can learn how to contribute, while returning members refine their organizational skills. Regular attendance is encouraged to stay informed and to play an active role in shaping the departmental community.
+  //   Finally, society meetings play a social role by connecting students across year groups and encouraging mentorship. New members can learn how to contribute, while returning members refine their organizational skills. Regular attendance is encouraged to stay informed and to play an active role in shaping the departmental community.
 
-    The collaborative spirit of these meetings often leads to lasting friendships and professional connections that extend well beyond the academic setting.`,
-    keyTakeaways: [
-      "Learn about upcoming society events and activities",
-      "Discover leadership and volunteer opportunities",
-      "Understand how to get involved in departmental initiatives",
-      "Meet fellow students and build your network"
-    ],
-    whatToExpect: [
-      "Reports from society executives and committee heads",
-      "Planning discussions for workshops and social events",
-      "Election of new executive members if needed",
-      "Networking session with refreshments",
-      "Q&A with faculty advisors and senior students"
-    ]
-  },
+  //   The collaborative spirit of these meetings often leads to lasting friendships and professional connections that extend well beyond the academic setting.`,
+  //   keyTakeaways: [
+  //     "Learn about upcoming society events and activities",
+  //     "Discover leadership and volunteer opportunities",
+  //     "Understand how to get involved in departmental initiatives",
+  //     "Meet fellow students and build your network"
+  //   ],
+  //   whatToExpect: [
+  //     "Reports from society executives and committee heads",
+  //     "Planning discussions for workshops and social events",
+  //     "Election of new executive members if needed",
+  //     "Networking session with refreshments",
+  //     "Q&A with faculty advisors and senior students"
+  //   ]
+  // },
   {
     id: 3,
     title: "CS Alpha",
@@ -89,36 +89,36 @@ export const events = [
       "Prizes and recognition for outstanding projects"
     ]
   },
-  {
-    id: 4,
-    title: "Meet and Greet",
-    date: "Dec 13, 2025",
-    semester: "First Semester",
-    image: "/images/meetandgreet.jpg",
-    summary: "A networking event for students and staff members.",
-    description: `The Meet and Greet event creates an informal, relaxed environment for new and returning students to meet faculty, administrators, and senior students. Short welcome speeches are complemented by icebreaker activities and small group conversations that encourage attendees to exchange experiences and expectations.
+  // {
+  //   id: 4,
+  //   title: "Meet and Greet",
+  //   date: "Dec 13, 2025",
+  //   semester: "First Semester",
+  //   image: "/images/meetandgreet.jpg",
+  //   summary: "A networking event for students and staff members.",
+  //   description: `The Meet and Greet event creates an informal, relaxed environment for new and returning students to meet faculty, administrators, and senior students. Short welcome speeches are complemented by icebreaker activities and small group conversations that encourage attendees to exchange experiences and expectations.
 
-    This social event allows new students to ask practical questions about coursework, study habits, and campus life while enabling senior students to offer mentorship and tips for academic success. Faculty members often highlight essential resources such as tutoring, lab access, and research opportunities. The atmosphere fosters personal connections that can evolve into mentoring relationships throughout the semester.
+  //   This social event allows new students to ask practical questions about coursework, study habits, and campus life while enabling senior students to offer mentorship and tips for academic success. Faculty members often highlight essential resources such as tutoring, lab access, and research opportunities. The atmosphere fosters personal connections that can evolve into mentoring relationships throughout the semester.
 
-    Organizers typically provide information booths where student clubs register interest, and where departmental services like career advising and mental health support offer guidance. It's also an excellent opportunity for clubs to recruit new members and for students to discover extracurricular options that complement their studies. Networking at this stage helps students build a support system that contributes to resilience and motivation.
+  //   Organizers typically provide information booths where student clubs register interest, and where departmental services like career advising and mental health support offer guidance. It's also an excellent opportunity for clubs to recruit new members and for students to discover extracurricular options that complement their studies. Networking at this stage helps students build a support system that contributes to resilience and motivation.
 
-    In summary, Meet and Greet strengthens departmental community bonds by reducing barriers between lecturers and students and by helping newcomers feel included. The event sets a tone of openness and cooperation that supports academic collaboration and student wellbeing for the rest of the semester.
+  //   In summary, Meet and Greet strengthens departmental community bonds by reducing barriers between lecturers and students and by helping newcomers feel included. The event sets a tone of openness and cooperation that supports academic collaboration and student wellbeing for the rest of the semester.
 
-    Many students find that the connections made during this event lead to study partnerships, research opportunities, and friendships that enrich their entire university experience.`,
-    keyTakeaways: [
-      "Build relationships with faculty and staff in informal setting",
-      "Connect with senior students for mentorship opportunities",
-      "Learn about departmental clubs and organizations",
-      "Get comfortable in the department community"
-    ],
-    whatToExpect: [
-      "Icebreaker activities and networking games",
-      "Faculty and staff introductions in small groups",
-      "Club and organization information booths",
-      "Refreshments and casual conversations",
-      "Campus resource information sessions"
-    ]
-  },
+  //   Many students find that the connections made during this event lead to study partnerships, research opportunities, and friendships that enrich their entire university experience.`,
+  //   keyTakeaways: [
+  //     "Build relationships with faculty and staff in informal setting",
+  //     "Connect with senior students for mentorship opportunities",
+  //     "Learn about departmental clubs and organizations",
+  //     "Get comfortable in the department community"
+  //   ],
+  //   whatToExpect: [
+  //     "Icebreaker activities and networking games",
+  //     "Faculty and staff introductions in small groups",
+  //     "Club and organization information booths",
+  //     "Refreshments and casual conversations",
+  //     "Campus resource information sessions"
+  //   ]
+  // },
   {
     id: 5,
     title: "Inter-Class League",
@@ -210,53 +210,53 @@ export const events = [
     ]
   },
   // ... rest of the events remain the same
-  {
-    id: 8,
-    title: "First Semester Exams",
-    date: "Mar 2 – March 18, 2026",
-    semester: "First Semester",
-    image: "/images/exams.jpg",
-    summary: "End-of-semester examinations across all courses.",
-    description: `First Semester Exams are formal assessments that evaluate students' comprehension of the semester's coursework, including theory, practical labs, and project submissions. Exams are scheduled systematically to ensure fair timing and adequate preparation windows for all students.
+  // {
+  //   id: 8,
+  //   title: "First Semester Exams",
+  //   date: "Mar 2 – March 18, 2026",
+  //   semester: "First Semester",
+  //   image: "/images/exams.jpg",
+  //   summary: "End-of-semester examinations across all courses.",
+  //   description: `First Semester Exams are formal assessments that evaluate students' comprehension of the semester's coursework, including theory, practical labs, and project submissions. Exams are scheduled systematically to ensure fair timing and adequate preparation windows for all students.
 
-    Preparation for exams typically intensifies with targeted revision sessions, past-paper reviews, and focused tutorials. Students are advised to form study groups, consult tutors, and manage their time by creating revision schedules. Practical examinations and project defenses may require demonstrations or oral questioning in addition to written tests.
+  //   Preparation for exams typically intensifies with targeted revision sessions, past-paper reviews, and focused tutorials. Students are advised to form study groups, consult tutors, and manage their time by creating revision schedules. Practical examinations and project defenses may require demonstrations or oral questioning in addition to written tests.
 
-    Faculty use the exam period to review course outcomes and identify areas where teaching can be improved in subsequent semesters. The results provide a benchmark for student progression and inform academic advising. Support services such as counselling and academic coaching are made available to assist students managing stress during this period.
+  //   Faculty use the exam period to review course outcomes and identify areas where teaching can be improved in subsequent semesters. The results provide a benchmark for student progression and inform academic advising. Support services such as counselling and academic coaching are made available to assist students managing stress during this period.
 
-    Upon completion of exams, students are encouraged to reflect on their learning — identifying strengths and gaps — and to meet with lecturers for feedback when results are released. This reflective practice helps students plan growth strategies for the remainder of the academic year.
+  //   Upon completion of exams, students are encouraged to reflect on their learning — identifying strengths and gaps — and to meet with lecturers for feedback when results are released. This reflective practice helps students plan growth strategies for the remainder of the academic year.
 
-    The exam period, while challenging, serves as an important milestone that helps students develop resilience, time management, and self-assessment skills that are valuable in both academic and professional contexts.`,
-  },
-  {
-    id: 9,
-    title: "Resumption of Classes",
-    date: "Apr 10, 2026",
-    semester: "Second Semester",
-    image: "/images/open.jpg",
-    summary: "Students resume for the second semester of the academic year.",
-    description: `Resumption of Classes begins the second academic half with renewed focus on coursework, projects, and research activities. Students return refreshed from the break and ready to build upon the foundations laid in the first semester.
+  //   The exam period, while challenging, serves as an important milestone that helps students develop resilience, time management, and self-assessment skills that are valuable in both academic and professional contexts.`,
+  // },
+  // {
+  //   id: 9,
+  //   title: "Resumption of Classes",
+  //   date: "Apr 10, 2026",
+  //   semester: "Second Semester",
+  //   image: "/images/open.jpg",
+  //   summary: "Students resume for the second semester of the academic year.",
+  //   description: `Resumption of Classes begins the second academic half with renewed focus on coursework, projects, and research activities. Students return refreshed from the break and ready to build upon the foundations laid in the first semester.
 
-    This period is crucial for final-year students who may be refining capstone projects or research proposals; supervisors meet to agree on project timelines and deliverables. For continuing students, resumption is an opportunity to take elective modules, join lab groups, or begin collaborative projects that extend beyond the classroom. Administrative notices about submission deadlines and internship opportunities are typically highlighted.
+  //   This period is crucial for final-year students who may be refining capstone projects or research proposals; supervisors meet to agree on project timelines and deliverables. For continuing students, resumption is an opportunity to take elective modules, join lab groups, or begin collaborative projects that extend beyond the classroom. Administrative notices about submission deadlines and internship opportunities are typically highlighted.
 
-    Academic support services resume at full capacity to help students transition smoothly into the semester's demands. Orientation for practical labs, special workshops, and safety protocols ensures that students can engage effectively from day one. Events planning for the semester also begins in earnest, with committees finalising dates for major activities like Innovation Week.
+  //   Academic support services resume at full capacity to help students transition smoothly into the semester's demands. Orientation for practical labs, special workshops, and safety protocols ensures that students can engage effectively from day one. Events planning for the semester also begins in earnest, with committees finalising dates for major activities like Innovation Week.
 
-    Overall, resumption is a fresh start that sets the tone for productive academic engagement, collaboration, and forward planning. Students who use this period to set clear objectives and establish routines find it easier to manage semester workloads effectively.
+  //   Overall, resumption is a fresh start that sets the tone for productive academic engagement, collaboration, and forward planning. Students who use this period to set clear objectives and establish routines find it easier to manage semester workloads effectively.
 
-    The second semester often builds on first-semester learning with more advanced topics and greater emphasis on independent research and specialized applications of core concepts.`,
-    keyTakeaways: [
-      "Transition smoothly into second semester coursework",
-      "Understand new course requirements and expectations",
-      "Set academic goals for the remainder of the year",
-      "Get updated on semester events and deadlines"
-    ],
-    whatToExpect: [
-      "Course introduction sessions and syllabus reviews",
-      "Project team formations and assignment briefings",
-      "Academic advising and course selection support",
-      "Department announcements and calendar updates",
-      "Welcome back social events"
-    ]
-  },
+  //   The second semester often builds on first-semester learning with more advanced topics and greater emphasis on independent research and specialized applications of core concepts.`,
+  //   keyTakeaways: [
+  //     "Transition smoothly into second semester coursework",
+  //     "Understand new course requirements and expectations",
+  //     "Set academic goals for the remainder of the year",
+  //     "Get updated on semester events and deadlines"
+  //   ],
+  //   whatToExpect: [
+  //     "Course introduction sessions and syllabus reviews",
+  //     "Project team formations and assignment briefings",
+  //     "Academic advising and course selection support",
+  //     "Department announcements and calendar updates",
+  //     "Welcome back social events"
+  //   ]
+  // },
   {
     id: 10,
     title: "Society Meeting",
@@ -407,21 +407,21 @@ export const events = [
       "Study group coordination for finals"
     ]
   },
-  {
-    id: 15,
-    title: "Second Semester Exams",
-    date: "Jul 20 – July 28, 2026",
-    semester: "Second Semester",
-    image: "/images/exams.jpg",
-    summary: "Final exams mark the completion of the academic year.",
-    description: `Second Semester Exams are the culminating assessments of the academic year, testing students' mastery of both theoretical knowledge and practical proficiency. Exams include written tests, laboratory assessments, project submissions, and oral defenses where required.
+  // {
+  //   id: 15,
+  //   title: "Second Semester Exams",
+  //   date: "Jul 20 – July 28, 2026",
+  //   semester: "Second Semester",
+  //   image: "/images/exams.jpg",
+  //   summary: "Final exams mark the completion of the academic year.",
+  //   description: `Second Semester Exams are the culminating assessments of the academic year, testing students' mastery of both theoretical knowledge and practical proficiency. Exams include written tests, laboratory assessments, project submissions, and oral defenses where required.
 
-    Students prepare through comprehensive revision plans, group study sessions, and targeted tutorials designed to strengthen performance in identified weak areas. Faculty members provide revision guidelines and offer office hours to clarify last-minute questions. Practical exam components evaluate students' ability to apply skills under timed conditions, reflecting workplace expectations.
+  //   Students prepare through comprehensive revision plans, group study sessions, and targeted tutorials designed to strengthen performance in identified weak areas. Faculty members provide revision guidelines and offer office hours to clarify last-minute questions. Practical exam components evaluate students' ability to apply skills under timed conditions, reflecting workplace expectations.
 
-    Examination conduct emphasizes fairness and academic integrity, with supervisors and clear procedures in place to handle queries and disputes. After exams, marking and moderation processes ensure consistent standards across modules. Students receive feedback and results that inform academic progression and potential remediation if necessary.
+  //   Examination conduct emphasizes fairness and academic integrity, with supervisors and clear procedures in place to handle queries and disputes. After exams, marking and moderation processes ensure consistent standards across modules. Students receive feedback and results that inform academic progression and potential remediation if necessary.
 
-    Completing the second-semester exams represents an important milestone: for many students, it determines graduation eligibility or progression into higher-level study. The department celebrates completion and recognises the effort invested across the year before students transition to summer breaks, internships, or next-stage studies.
+  //   Completing the second-semester exams represents an important milestone: for many students, it determines graduation eligibility or progression into higher-level study. The department celebrates completion and recognises the effort invested across the year before students transition to summer breaks, internships, or next-stage studies.
 
-    The comprehensive nature of second-semester exams ensures that students integrate knowledge from their entire program of study, preparing them for the complex, multi-faceted challenges they will encounter in their professional careers or further academic pursuits.`
-  }
+  //   The comprehensive nature of second-semester exams ensures that students integrate knowledge from their entire program of study, preparing them for the complex, multi-faceted challenges they will encounter in their professional careers or further academic pursuits.`
+  // }
 ];

@@ -28,11 +28,11 @@ export default function Footer() {
           </Link>
           <Link to={"/clubs"} className="flex flex-col items-center gap-0.5">
             <HeartHandshake />
-            <h2 className={`transition-all ${pathname === "/clubs" && "bg-white px-2 text-sky-400 rounded-full font-black"}`}>Clubs</h2>
+            <h2 className={`transition-all ${pathname.includes("/clubs") && "bg-white px-2 text-sky-400 rounded-full font-black"}`}>Clubs</h2>
           </Link>
           <Link to={"/events"} className="flex flex-col items-center gap-0.5">
             <CalendarDays />
-            <h2 className={`transition-all ${pathname === "/events" && "bg-white px-2 text-sky-400 rounded-full font-black"}`}>Events</h2>
+            <h2 className={`transition-all ${pathname.includes("/events") && "bg-white px-2 text-sky-400 rounded-full font-black"}`}>Events</h2>
           </Link>
           <Link to={"/about"} className="flex flex-col items-center gap-0.5">
             <Info />
