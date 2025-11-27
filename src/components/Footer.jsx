@@ -6,7 +6,7 @@ export default function Footer() {
   const location = useLocation();
   const pathname = location.pathname;
   return (
-    <footer className="bg-gradient-to-r fixed z-50 bottom-0 left-0 right-0 from-sky-400 to-blue-400 text-white py-3 shadow-inner">
+    <footer className="bg-linear-to-r fixed z-50 bottom-0 left-0 right-0 from-sky-400 to-blue-400 text-white py-3 shadow-inner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="md:flex hidden flex-col md:flex-row justify-between">
           <div className="flex flex-1 flex-col">

@@ -19,8 +19,6 @@ export default function EventList() {
     <div className={`group relative bg-white rounded-2xl lg:rounded-3xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden border border-gray-200 ${
       featured ? 'ring-2 ring-amber-400 ring-opacity-50' : ''
     }`}>
-
-      {/* <div className="absolute inset-0 bg-linear-to-br from-white via-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div> */}
       
       {featured && (
         <div className="absolute top-3 left-3 lg:top-4 lg:left-4 z-10">
@@ -109,10 +107,7 @@ export default function EventList() {
                 <p className="text-gray-600 lg:mt-2 text-sm lg:text-lg">Academic Year 2025/2026</p>
               </div>
             </div>
-            {/* <div className="text-center lg:text-right">
-              <div className="text-3xl lg:text-4xl font-bold text-sky-600">{events.length}</div>
-              <div className="text-xs lg:text-sm text-gray-500 font-semibold">EVENTS</div>
-            </div> */}
+
           </div>
         </div>
       </div>
@@ -144,51 +139,6 @@ export default function EventList() {
       <main className="flex-1">
         <div className="pt-20 lg:pt-24 pb-16 lg:pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* <div className="text-center mb-6 lg:mb-24">
-              <h1 className="text-3xl lg:text-7xl font-black text-gray-900 mb-3 lg:mb-8 leading-tight">
-                Department
-                <span className="block bg-linear-to-r from-sky-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent text-3xl lg:text-7xl">
-                  Events
-                </span>
-              </h1>
-              
-              <p className="text-sm lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light px-4">
-                Discover cutting-edge workshops, inspiring seminars, and transformative networking events 
-                designed to elevate your academic journey.
-              </p>
-            </div> */}
-
-            {/* Stats Grid - Mobile responsive */}
-            {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-8 lg:mb-20">
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-sm lg:shadow-md border border-white/20 text-center transform hover:-translate-y-1 lg:hover:-translate-y-2 transition-all duration-500">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-linear-to-br from-sky-500 to-blue-600 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-2 lg:mb-4 shadow-sm">
-                  <TrendingUp className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                </div>
-                <div className="text-2xl lg:text-3xl font-black text-sky-600 mb-1 lg:mb-2">{events.length}</div>
-                <div className="text-xs lg:text-base text-gray-600 font-semibold">Total Events</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-sm lg:shadow-md border border-white/20 text-center transform hover:-translate-y-1 lg:hover:-translate-y-2 transition-all duration-500">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-linear-to-br from-blue-500 to-purple-600 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-2 lg:mb-4 shadow-sm">
-                  <BookOpen className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                </div>
-                <div className="text-2xl lg:text-3xl font-black text-blue-600 mb-1 lg:mb-2">{firstSemester.length}</div>
-                <div className="text-xs lg:text-base text-gray-600 font-semibold">First Semester</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-sm lg:shadow-md border border-white/20 text-center transform hover:-translate-y-1 lg:hover:-translate-y-2 transition-all duration-500">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-linear-to-br from-green-500 to-emerald-600 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-2 lg:mb-4 shadow-sm">
-                  <Zap className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                </div>
-                <div className="text-2xl lg:text-3xl font-black text-green-600 mb-1 lg:mb-2">{secondSemester.length}</div>
-                <div className="text-xs lg:text-base text-gray-600 font-semibold">Second Semester</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-sm lg:shadow-md border border-white/20 text-center transform hover:-translate-y-1 lg:hover:-translate-y-2 transition-all duration-500">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-linear-to-br from-amber-500 to-orange-600 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-2 lg:mb-4 shadow-sm">
-                  <Star className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                </div>
-                <div className="text-2xl lg:text-3xl font-black text-amber-600 mb-1 lg:mb-2">{featuredEvents.length}</div>
-                <div className="text-xs lg:text-base text-gray-600 font-semibold">Featured</div>
-              </div>
-            </div> */}
 
             {featuredEvents.length > 0 && (
               <section className="mb-10 lg:mb-16">

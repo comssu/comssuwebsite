@@ -4,18 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const ClubExcerpt = ({ club }) => {
     return (
-        <div className={`group relative bg-white rounded-2xl lg:rounded-3xl shadow-sm transition-all duration-500 overflow-hidden border-2 border-gray-400 ring-opacity-50`}>
-
-        {/* <div className="absolute inset-0 bg-linear-to-br from-white via-blue-50 to-cyan-50 opacity-0 ring-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div> */}
-        
-        {/* {featured && (
-            <div className="absolute top-3 left-3 lg:top-4 lg:left-4 z-10">
-            <div className="bg-linear-to-r from-amber-400 to-orange-500 text-white px-2 py-1 lg:px-3 lg:py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-                <Star className="w-3 h-3" />
-                Featured
-            </div>
-            </div>
-        )} */}
+        <div className={`group relative bg-white rounded-2xl lg:rounded-3xl shadow-sm transition-all duration-500 overflow-hidden border-2 border-sky-400 ring-opacity-50`}>
 
         <div className="relative h-48 lg:h-56 overflow-hidden">
             <img
@@ -33,25 +22,6 @@ const ClubExcerpt = ({ club }) => {
         </div>
 
         <div className="relative p-4 lg:p-6 z-10">
-            {/* <div className="flex items-center justify-between mb-3 lg:mb-4">
-            <div className="flex items-center gap-2 text-sky-600">
-                <Calendar className="w-4 h-4" />
-                <span className="text-sm font-semibold">{club.date}</span>
-            </div>
-            <div className="flex items-center gap-3 text-gray-400 text-xs">
-                {club.location && (
-                <div className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                </div>
-                )}
-                {club.speakers && club.speakers.length > 0 && (
-                <div className="flex items-center gap-1">
-                    <Users className="w-3 h-3" />
-                    <span>{club.speakers.length}</span>
-                </div>
-                )}
-            </div>
-            </div> */}
 
             <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-2 lg:mb-3 line-clamp-2 group-hover:text-sky-700 transition-colors duration-300 leading-tight">
             {club.name}

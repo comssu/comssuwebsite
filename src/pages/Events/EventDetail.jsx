@@ -131,12 +131,6 @@ export default function EventDetails() {
     );
   }
 
-  // const eventHighlights = [
-  //   "/images/events/highlight1.jpg",
-  //   "/images/events/highlight2.jpg", 
-  //   "/images/events/highlight3.jpg",
-  // ];
-
   return (
     <div className="min-h-screen bg-linear-to-br from-sky-50 via-blue-50 to-cyan-50 flex flex-col">
       <NavBar />
@@ -206,7 +200,7 @@ export default function EventDetails() {
                       </div>
                       
                       <div className="prose prose-lg max-w-none">
-                        <p className="text-gray-700 leading-relaxed text-sm mb-6 bg-linear-to-r from-sky-50 to-blue-50 p-3 rounded-2xl border border-sky-100">
+                        <p className="text-gray-700 leading-relaxed text-sm mb-6 bg-white p-3 rounded-2xl border border-sky-100">
                           {event.description}
                         </p>
                       </div>
@@ -260,31 +254,6 @@ export default function EventDetails() {
                         </p>
                       </div>
                     )}
-
-                    {/* <div className="bg-linear-to-r from-sky-500/5 to-blue-500/5 rounded-2xl p-8 border border-sky-200/50">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-                        {eventStatus?.status === 'past' ? 'Event Gallery' : 'Event Highlights'}
-                      </h3>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {eventHighlights.map((imageSrc, index) => (
-                          <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                            <img
-                              src={imageSrc}
-                              alt={`Event highlight ${index + 1}`}
-                              className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-700"
-                              onError={(e) => {
-                                e.target.src = `https://picsum.photos/400/300?random=${index + 1}`;
-                              }}
-                            />
-                            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                              <p className="text-white font-semibold text-lg">
-                                {eventStatus?.status === 'past' ? 'Photo' : 'Preview'} {index + 1}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </div>

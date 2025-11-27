@@ -7,7 +7,7 @@ export const clubs = [
     description: 'The Software Engineering Club is dedicated to empowering students with practical programming experience and software development best practices. Members work on projects that solve campus and community problems, learn about modern development tools, and host coding challenges and hackathons. The club also encourages teamwork, creativity, and continuous learning to prepare members for careers in tech and entrepreneurship.',
     staff: [
       {
-        image: "/",
+        image: "/images/brato.jpg",
         name: "Eng. Abdulai Brato Kamara",
         position: "Head of Club"
       },
@@ -35,17 +35,17 @@ export const clubs = [
         position: "Head of Club"
       },
       {
-        image: "/images/of.jpg",
+        image: "/images/fenfaquee.jpg",
         name: "Osman Fenfaquee",
         position: "Club Coordinator"
       },
       {
-        image: "/images/ms.jpg",
+        image: "/images/mh.jpg",
         name: "Mohamed Sillah",
         position: "Club Coordinator"
       },
       {
-        image: "/images/abm.jpg",
+        image: "/images/foday.jpg",
         name: "Foday Martin Conteh",
         position: "Club Coordinator"
       },
@@ -58,18 +58,18 @@ export const clubs = [
     description: 'Focused on visual communication and content creation, the Multimedia Club provides a space for students interested in graphic design, photography, video production, and digital media. Members collaborate on departmental media projects, produce event coverage, and explore creative tools like Adobe Creative Suite and Canva. It’s the creative heartbeat of the department.',
     staff: [
       {
-        image: "/images/",
+        image: "/images/iron.png",
         name: "Mr. Sorie Ironn-Sky Turay",
         position: "Head of Club"
       },
       {
-        image: "/images/",
+        image: "/images/kondi.jpg",
         name: "Andrew Kondi Kargbo",
         position: "Club Coordinator"
       },
       {
-        image: "/images/",
-        name: "Abu Bashiru",
+        image: "/images/bash.jpg",
+        name: "Abu Bashiru Sesay",
         position: "Club Coordinator"
       },
     ] },
@@ -81,18 +81,18 @@ export const clubs = [
     description: 'Students in the Data Science Club dive into topics such as data analysis, visualization, and machine learning. Through workshops, projects, and competitions, members learn to extract insights from data. The club encourages analytical thinking and collaboration to address societal and academic challenges through data-driven solutions.',
     staff: [
       {
-        image: "/images/",
+        image: "/images/hod.jpg",
         name: "Mr. Ibrahim Kalokoh",
         position: "Head of Club"
       },
       {
-        image: "/images/",
+        image: "/images/rahim.jpg",
         name: "Abdulrahim Jalloh",
         position: "Club Coordinator"
       },
       {
-        image: "/images/",
-        name: "Alimamy Emmanuel Kamara",
+        image: "/images/aliya.jpg",
+        name: "Aliya Conteh",
         position: "Club Coordinator"
       },
     ] },
@@ -104,17 +104,17 @@ export const clubs = [
     description: 'The AI Club brings together enthusiasts passionate about machine learning, robotics, and intelligent automation. Members engage in AI projects, research, and tutorials, focusing on deep learning, natural language processing, and computer vision. The club also hosts talks and collaborations that inspire innovation and ethical AI development.',
     staff: [
       {
-        image: "/images/",
+        image: "/images/bah.jpg",
         name: "Eng. Amadu Wurie Bah",
         position: "Head of Club"
       },
       {
-        image: "/images/",
+        image: "/images/kia.jpg",
         name: "Kai Foday",
         position: "Club Coordinator"
       },
       {
-        image: "/images/",
+        image: "/images/sawaneh.jpg",
         name: "Abubakarr Sawaneh",
         position: "Club Coordinator"
       },
@@ -127,17 +127,17 @@ export const clubs = [
     description: 'WiT provides a supportive community for women in the Computer Science Department, promoting diversity, mentorship, and career growth. The club organizes workshops, talks, and networking sessions to inspire confidence and skill development among its members. It stands for inclusion, empowerment, and breaking barriers in technology.',
     staff: [
       {
-        image: "/images/",
+        image: "/images/kissimi.jpeg",
         name: "Mr. Kissimi Kayleemasa Kamara",
         position: "Head of Club"
       },
       {
-        image: "/images/",
+        image: "/images/samuella.jpg",
         name: "Samuella E. Moiwo",
         position: "Club Coordinator"
       },
       {
-        image: "/images/",
+        image: "/images/sv.jpg",
         name: "Sylvia Koroma",
         position: "Club Coordinator"
       },
