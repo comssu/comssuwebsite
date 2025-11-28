@@ -86,7 +86,7 @@ export const clubs = [
         position: "Head of Club"
       },
       {
-        image: "/images/rahim.jpg",
+        image: "/images/rahimj.jpg",
         name: "Abdulrahim Jalloh",
         position: "Club Coordinator"
       },

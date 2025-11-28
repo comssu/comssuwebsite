@@ -38,7 +38,6 @@ export default function Home() {
                 Explore Clubs
               </Link>
             </div>
-
           </div>
 
           <div className="w-[80%] max-w-80 lg:max-w-96 aspect-square rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-none">
