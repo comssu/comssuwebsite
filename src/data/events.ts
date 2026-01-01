@@ -124,8 +124,8 @@ export const events: Event[] = [
   {
     id: 11,
     title: "Debate Competition",
-    date: "Apr 28 – 30, 2026",
-    semester: "Second Semester",
+    date: "Jan 30, 2026",
+    semester: "First Semester",
     image: "/images/debate.jpg",
     summary: "A three-day inter-departmental debate competition.",
     description: `The Debate Competition invites teams to engage in structured argumentation on topical issues related to technology, ethics, policy, and society. Over three days, participants present researched positions, rebut opposing views, and demonstrate persuasive public speaking skills.
