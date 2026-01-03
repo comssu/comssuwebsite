@@ -101,7 +101,7 @@ const EventDetail: React.FC = () => {
     return (
       <div className="min-h-screen bg-linear-to-br from-sky-50 via-blue-50 to-cyan-50 flex flex-col">
         <NavBar />
-        <div className="flex-1 flex items-center justify-center px-4">
+        <div className="flex-1 flex items-center justify-center px-4 py-3">
           <div className="text-center max-w-md">
             <div className="relative">
               <div className="absolute -inset-4 bg-linear-to-r from-sky-400 to-blue-500 rounded-2xl blur-lg opacity-20"></div>
@@ -136,7 +136,7 @@ const EventDetail: React.FC = () => {
       <NavBar />
       
       <main className="flex-1">
-        <div className="pt-24"> 
+        <div className="pt-22 pb-4"> 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
             <div className="relative">
               <div className="absolute -inset-4 bg-linear-to-r from-sky-400/20 via-blue-400/10 to-cyan-400/20 rounded-3xl blur-xl"></div>
@@ -207,7 +207,7 @@ const EventDetail: React.FC = () => {
                     </div>
 
                     {eventStatus?.status === 'upcoming' && event.keyTakeaways && event.whatToExpect && (
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
                         <div className="bg-linear-to-br from-white to-amber-50 rounded-2xl p-6 border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300">
                           <div className="w-12 h-12 bg-linear-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
@@ -244,7 +244,7 @@ const EventDetail: React.FC = () => {
                     )}
 
                     {eventStatus?.status === 'past' && (
-                      <div className="bg-linear-to-br from-blue-50 to-sky-50 rounded-2xl p-6 border border-blue-200 mb-8">
+                      <div className="bg-linear-to-br from-blue-50 to-sky-50 rounded-2xl p-6 border border-blue-200">
                         <div className="flex items-center gap-3 mb-4">
                           <CheckCircle className="w-8 h-8 text-blue-600" />
                           <h3 className="text-2xl font-bold text-gray-800">Event Completed</h3>

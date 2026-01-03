@@ -1,4 +1,4 @@
-import { CalendarDays, HeartHandshake, Info, Store } from "lucide-react";
+import { CalendarDays, HeartHandshake, Store, Users } from "lucide-react";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -21,9 +21,9 @@ const Footer: React.FC = () => {
             <CalendarDays />
             <h2 className={`transition-all ${pathname.includes("/events") && "bg-white px-2 text-sky-400 rounded-full font-black"}`}>Events</h2>
           </Link>
-          <Link to={"/about"} className="flex flex-col items-center gap-0.5">
-            <Info />
-            <h2 className={`transition-all ${pathname === "/about" && "bg-white px-2 text-sky-400 rounded-full font-black"}`}>About</h2>
+          <Link to={"/society"} className="flex flex-col items-center gap-0.5">
+            <Users />
+            <h2 className={`transition-all ${pathname === "/society" && "bg-white px-2 text-sky-400 rounded-full font-black"}`}>Society</h2>
           </Link>
         </div>
       </div>

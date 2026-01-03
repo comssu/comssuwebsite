@@ -6,8 +6,8 @@ import ClubsList from './pages/Clubs/ClubsList';
 import ClubDetail from './pages/Clubs/ClubDetail';
 import EventsList from './pages/Events/EventsList';
 import EventDetail from './pages/Events/EventDetail';
-// const EventsList = lazy(() => import('./pages/Events/EventsList'))
-// const EventDetail = lazy(() => import('./pages/Events/EventDetail'))
+import Society from './pages/Society';
+import Signin from './pages/Signin';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +18,10 @@ const App: React.FC = () => {
       <Route path="/clubs" element={<ClubsList />} />
       <Route path="/events" element={<EventsList />} />
       <Route path="/events/:id" element={<EventDetail />} />
+      <Route path='/society'>
+        <Route index element={<Society />} />
+        <Route path='/society/signin' element={<Signin />} />
+      </Route>
     </Routes>
   );
 }

@@ -75,6 +75,17 @@ const NavBar: React.FC = () => {
             </NavLink>
 
             <NavLink
+              to="/society"
+              className={({ isActive }) =>
+                `${linkClasses} ${
+                  isActive ? "bg-white text-sky-600 shadow-md" : "text-white"
+                }`
+              }
+            >
+              Society
+            </NavLink>
+
+            <NavLink
               to="/about"
               className={({ isActive }) =>
                 `${linkClasses} ${

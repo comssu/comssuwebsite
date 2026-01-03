@@ -8,7 +8,7 @@ interface Props {
 }
 
 const EventCard: React.FC<Props> = ({ event, featured = false }) => (
-  <div className={`group relative bg-white rounded-2xl lg:rounded-3xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden border border-gray-200 ${
+  <div className={`group relative bg-white rounded-xl lg:rounded-2xl shadow-sm hover:shadow-md transition-all duration-500 border border-gray-200 hover:border-0 overflow-hidden ${
     featured ? 'ring-2 ring-amber-400 ring-opacity-50' : ''
   }`}>
     
@@ -73,8 +73,6 @@ const EventCard: React.FC<Props> = ({ event, featured = false }) => (
         <ArrowRight className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-300" />
       </Link>
     </div>
-
-    <div className="absolute inset-0 border-2 border-transparent group-hover:border-sky-200 rounded-2xl lg:rounded-3xl transition-all duration-500 pointer-events-none"></div>
   </div>
 );
 

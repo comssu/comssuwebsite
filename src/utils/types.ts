@@ -31,3 +31,14 @@ export interface Event {
   keyTakeaways: string[];
   whatToExpect: string[];
 }
+
+export interface SigninFormData {
+  id: string;
+  password: string;
+}
+
+export interface ToastProps {
+  message: string | null;
+  timeout: number;
+  isError: boolean;
+}

@@ -13,37 +13,29 @@ const About: React.FC = () => {
     <>
       <NavBar />
       <main className="max-w-6xl mx-auto py-20 px-5">
-        <div className='flex w-full justify-center gap-3 mb-3 text-sm flex-wrap'>
-          <button onClick={() => setActiveTab("about")} className={`px-2.5 py-1.5 shadow-sm rounded-full text-sky-600 cursor-pointer ${activeTab === "about" && "bg-sky-600 text-white"}`}>About</button>
-          <button onClick={() => setActiveTab("staff")} className={`px-2.5 py-1.5 shadow-sm rounded-full text-sky-600 cursor-pointer ${activeTab === "staff" && "bg-sky-600 text-white"}`}>Staff</button>
-          <button onClick={() => setActiveTab("contact")} className={`px-2.5 py-1.5 shadow-sm rounded-full text-sky-600 cursor-pointer ${activeTab === "contact" && "bg-sky-600 text-white"}`}>Contact</button>
+        <div className='flex w-full justify-center gap-3 mb-3 text-sm flex-wrap font-semibold'>
+          <button onClick={() => setActiveTab("about")} className={`px-2.5 py-1.5 shadow-sm rounded-full text-sky-600 cursor-pointer transition-all ${activeTab === "about" && "bg-sky-600 text-white"}`}>About</button>
+          <button onClick={() => setActiveTab("staff")} className={`px-2.5 py-1.5 shadow-sm rounded-full text-sky-600 cursor-pointer transition-all ${activeTab === "staff" && "bg-sky-600 text-white"}`}>Staff</button>
+          <button onClick={() => setActiveTab("contact")} className={`px-2.5 py-1.5 shadow-sm rounded-full text-sky-600 cursor-pointer transition-all ${activeTab === "contact" && "bg-sky-600 text-white"}`}>Contact</button>
         </div>
 
         {activeTab === "about" && (
           <div className="p-4 sm:p-6 lg:p-8 bg-linear-to-br from-slate-50 to-blue-50/30 border border-slate-200 rounded-3xl shadow-sm max-w-7xl mx-auto">
-            <div className="text-center mb-5 lg:mb-16">
+            <section className="mb-6 lg:mb-20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-12 items-center">
 
-              <h1 className="text-xl sm:text-2xl lg:text-5xl font-bold bg-linear-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent mb-4 hidden tracking-tight">
-                Department of Computer Science
-              </h1>
-              <div className="w-20 sm:w-24 lg:w-32 h-1 bg-linear-to-r from-sky-300 to-sky-600 mx-auto rounded-full mb-4 hidden"></div>
-            </div>
-
-            <section className="mb-16 lg:mb-20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-
-                <div className="space-y-6">
+                <div className="space-y-2">
                   <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-2">
                     <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
                     EST. 2010
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 leading-tight">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 leading-tight">
                     Shaping the Future of <span className="text-blue-600">Technology</span> in Sierra Leone
                   </h2>
 
-                  <div className="space-y-4 text-slate-600 leading-relaxed">
-                    <p className="text-lg">
+                  <div className="space-y-3 text-slate-600 leading-relaxed">
+                    <p className="text-sm md:text-md">
                       The <span className="font-semibold text-slate-800">Computer Science Department</span> at the University of Makeni stands as a beacon of technological excellence and innovation. We are committed to cultivating the next generation of ICT leaders through a rigorous academic framework combined with hands-on practical experience.
                     </p>
 
@@ -51,7 +43,7 @@ const About: React.FC = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="aspect-4/3 rounded-2xl overflow-hidden shadow-sm">
+                  <div className="aspect-4/3 rounded-md overflow-hidden shadow-sm">
                     <img
                       src="/images/grouppic.jpg"
                       alt="Computer Science Department Faculty and Students"
@@ -62,19 +54,14 @@ const About: React.FC = () => {
               </div>
             </section>
 
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              <div className="group relative bg-linear-to-br from-white to-blue-50 rounded-3xl p-8 shadow-sm border border-blue-100 hover:shadow-md transition-all duration-500">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-2xl text-white">🎯</span>
-                  </div>
-                </div>
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6">
+              <div className="group relative bg-linear-to-br from-white to-blue-50 rounded-md p-4 shadow-sm border border-blue-100 hover:shadow-md transition-all duration-500">
 
-                <div className="text-center mb-6 pt-4">
-                  <div className="inline-flex items-center px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-3">
+                <div className="text-center mb-3">
+                  <div className="inline-flex items-center px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-2">
                     OUR MISSION
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800 mb-4">Driving Purpose & Impact</h3>
+                  <h3 className="text-xl font-bold text-slate-800">Driving Purpose & Impact</h3>
                 </div>
 
                 <div className="space-y-4">
@@ -116,18 +103,13 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              <div className="group relative bg-linear-to-br from-white to-purple-50 rounded-3xl p-8 shadow-sm border border-purple-100 hover:shadow-md transition-all duration-500 mt-5 lg:mt-0">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-16 h-16 bg-sky-600 rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-2xl text-white">🔭</span>
-                  </div>
-                </div>
+              <div className="group relative bg-linear-to-br from-white to-purple-50 rounded-md p-6 shadow-sm border border-purple-100 hover:shadow-md transition-all duration-500 mt-5 lg:mt-0">
 
-                <div className="text-center mb-6 pt-4">
+                <div className="text-center mb-3">
                   <div className="inline-flex items-center px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-3">
                     OUR VISION
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800 mb-4">Future We're Building</h3>
+                  <h3 className="text-xl font-bold text-slate-800">Future We're Building</h3>
                 </div>
 
                 <div className="space-y-6">
@@ -155,7 +137,7 @@ const About: React.FC = () => {
           <div className='space-y-8 mt-5'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
               {staff.map((staffMember: Staff, index: number) => (
-                <div key={index} className='bg-white border-2 border-sky-400 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300'>
+                <div key={index} className='border border-sky-200 bg-white rounded-2xl p-5  shadow-sm hover:shadow-xl transition-all duration-300'>
                   <div className='flex justify-center mb-3'>
                     <img
                       src={staffMember.image}
@@ -192,8 +174,8 @@ const About: React.FC = () => {
         )}
 
         {activeTab === "contact" && (
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-start'>
-            <div className='bg-white border-2 border-sky-400 rounded-2xl p-6 shadow-lg mt-5'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 items-start'>
+            <div className='bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mt-1'>
               <h2 className='text-2xl font-black text-gray-800 mb-6'>Get In Touch</h2>
 
               <div className='space-y-6'>
@@ -216,7 +198,7 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className='bg-white border-2 border-sky-400 rounded-2xl p-6 shadow-lg mt-5'>
+            <div className='bg-white border border-gray-200 rounded-2xl p-6 shadow-sm'>
               <h2 className='text-2xl font-black text-gray-800 mb-6'>Contact Us Directly</h2>
 
               <div className='space-y-4'>

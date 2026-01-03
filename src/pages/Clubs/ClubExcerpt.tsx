@@ -9,7 +9,7 @@ interface Props {
 
 const ClubExcerpt: React.FC<Props> = ({ club }) => {
     return (
-        <div className={`group relative bg-white rounded-2xl lg:rounded-3xl shadow-sm transition-all duration-500 overflow-hidden border-2 border-sky-400 ring-opacity-50`}>
+        <div className={`group relative bg-white rounded-2xl lg:rounded-3xl shadow-sm transition-all duration-500 overflow-hidden border border-sky-200 ring-opacity-50`}>
 
         <div className="relative h-48 lg:h-56 overflow-hidden">
             <img
