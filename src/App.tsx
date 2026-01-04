@@ -34,7 +34,13 @@ const App: React.FC = () => {
         path="/admin/add-member"
         element={<AddMember members={members} setMembers={setMembers} />}
       />
+      <Route
+        path="/admin/edit-member/:id"
+        element={<AddMember members={members} setMembers={setMembers} />}
+      />
+
     </Routes>
+
   );
 };
 
