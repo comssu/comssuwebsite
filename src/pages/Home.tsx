@@ -7,14 +7,14 @@ const Home: React.FC = () => {
   return (
     <>
       <NavBar />
-      <main className="flex flex-col fixed top-0 bottom-0 left-0 right-0 lg:bg-[url('/images/bg-2.png')] bg-cover">
+      <main className="flex flex-col fixed top-0 bottom-0 left-0 right-0 bg-cover">
         <div className="absolute inset-0 bg-[url('/images/mainbg.jpg')] bg-cover"></div>
 
         <div className="absolute top-0 left-0 w-72 h-72 bg-sky-500/30 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-40"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300/30 rounded-full translate-x-1/3 translate-y-1/3 opacity-50"></div>
         <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-sky-300/30 rounded-full opacity-30"></div>
         
-        <div className="z-10 w-full md:pt-15 sm:px-10 flex lg:flex-row lg:gap-25 flex-col justify-center items-center gap-5 h-full max-w-250 mx-auto">
+        <div className="z-10 w-full md:pt-15 flex lg:flex-row flex-col justify-center lg:justify-between items-center gap-5 h-full max-w-250 mx-auto px-10">
 
           <div className="max-w-2xl z-10 flex flex-col gap-4">
             <h1 className="text-3xl text-center font-black md:text-4xl lg:text-5xl leading-tight">
@@ -23,12 +23,12 @@ const Home: React.FC = () => {
               <span className="text-gray-800 block text-center">Official Website</span>
             </h1>
 
-            <div className="w-120 lg:flex hidden text-center text-sm p-4 rounded-3xl text-white bg-linear-to-br from-amber-400 to-amber-600 shadow-sm">The Computer Science Department at the University of Makeni stands as a beacon of technological excellence and innovation.</div>
+            <div className="max-w-120 hidden lg:flex text-center text-sm p-4 rounded-3xl text-white bg-linear-to-br from-amber-400 to-amber-600 shadow-sm -mt-1">The Computer Science Department at the University of Makeni stands as a beacon of technological excellence and innovation.</div>
             
-            <div className="flex justify-center items-center gap-2 mb-6">
+            <div className="flex justify-center items-center gap-2 mb-3">
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center px-6 py-3 sm:px-3 sm: bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full shadow-sm hover:shadow-md transform transition-all duration-300 md:text-xl md:px-6"
+                className="inline-flex items-center justify-center px-4 py-3 sm:px-3 sm: bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full shadow-sm hover:shadow-md transform transition-all duration-300 md:text-xl md:px-6"
               >
                 Learn More
               </Link>
@@ -39,9 +39,10 @@ const Home: React.FC = () => {
                 Explore Clubs
               </Link>
             </div>
+            <img src="/images/grouppic.jpg" className="rounded-3xl shadow-sm lg:hidden max-w-100 w-full transform md:rotate-3 hover:rotate-0 transition-transform" />
           </div>
 
-          <div className="w-[80%] max-w-80 lg:max-w-96 aspect-square rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-none">
+          <div className="w-[80%] max-w-80 lg:max-w-96 aspect-square rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-none hidden lg:flex">
             <img
               src="/images/bg-2.png"
               alt="Department Building"
