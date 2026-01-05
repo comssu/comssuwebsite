@@ -33,9 +33,14 @@ export interface Event {
 }
 
 export interface SigninFormData {
-  id: string;
+  email: string;
   password: string;
 }
+
+export interface SigninReturnType {
+  user: {id: string, email: string} | null, 
+  token: string | null,
+  isAuthLoading: boolean}
 
 export interface ToastProps {
   message: string | null;

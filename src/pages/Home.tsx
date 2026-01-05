@@ -14,7 +14,7 @@ const Home: React.FC = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300/30 rounded-full translate-x-1/3 translate-y-1/3 opacity-50"></div>
         <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-sky-300/30 rounded-full opacity-30"></div>
         
-        <div className="z-10 w-full md:pt-15 sm:px-10 flex flex-col justify-center items-center gap-5 h-full max-w-250 mx-auto">
+        <div className="z-10 w-full md:pt-15 sm:px-10 flex lg:flex-row lg:gap-25 flex-col justify-center items-center gap-5 h-full max-w-250 mx-auto">
 
           <div className="max-w-2xl z-10 flex flex-col gap-4">
             <h1 className="text-3xl text-center font-black md:text-4xl lg:text-5xl leading-tight">
@@ -23,29 +23,29 @@ const Home: React.FC = () => {
               <span className="text-gray-800 block text-center">Official Website</span>
             </h1>
 
-            <p className="w-120 lg:flex hidden text-center text-gray-500">The Computer Science Department at the University of Makeni stands as a beacon of technological excellence and innovation.</p>
+            <div className="w-120 lg:flex hidden text-center text-sm p-4 rounded-3xl text-white bg-linear-to-br from-amber-400 to-amber-600 shadow-sm">The Computer Science Department at the University of Makeni stands as a beacon of technological excellence and innovation.</div>
             
             <div className="flex justify-center items-center gap-2 mb-6">
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center px-6 py-3 sm:px-3 sm: bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full shadow-sm hover:shadow-md transform transition-all duration-300 text-xl md:px-6"
+                className="inline-flex items-center justify-center px-6 py-3 sm:px-3 sm: bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full shadow-sm hover:shadow-md transform transition-all duration-300 md:text-xl md:px-6"
               >
                 Learn More
               </Link>
               <Link
                 to="/clubs"
-                className="inline-flex items-center justify-center px-6 py-3 sm:px-3 bg-white hover:bg-gray-50 text-sky-600 font-bold rounded-full shadow-sm hover:shadow-md transform transition-all duration-300 border border-sky-200 text-xl md:px-6"
+                className="inline-flex items-center justify-center px-6 py-3 sm:px-3 bg-white hover:bg-gray-50 text-sky-600 font-bold rounded-full shadow-sm hover:shadow-md transform transition-all duration-300 border border-sky-200 md:text-xl md:px-6"
               >
                 Explore Clubs
               </Link>
             </div>
           </div>
 
-          <div className="w-[80%] max-w-80 lg:max-w-96 aspect-square rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-none lg:hidden">
+          <div className="w-[80%] max-w-80 lg:max-w-96 aspect-square rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-none">
             <img
               src="/images/bg-2.png"
               alt="Department Building"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover shadow-sm"
             />
           </div>
         </div>

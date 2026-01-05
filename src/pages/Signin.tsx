@@ -14,8 +14,8 @@ const Signin: React.FC = () => {
     const dispatch = useAppDispatch();
     const [signIn, { isLoading: signingIn }] = useSignInMutation();
     const [showPwd, setShowPwd] = useState<boolean>(false);
-    const [formData, setFormData] = useState<SigninFormData>({ id: "", password: "" });
-    const [validationErrors, setValidationErrors] = useState<SignInValidationErrors>({ id: null, password: null });
+    const [formData, setFormData] = useState<SigninFormData>({ email: "", password: "" });
+    const [validationErrors, setValidationErrors] = useState<SignInValidationErrors>({ email: null, password: null });
     const [toastProps, setToastProps] = useState<ToastProps>({ message: null, timeout: 0, isError: false });
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,9 +33,9 @@ const Signin: React.FC = () => {
             console.log(response)
             if(response.token) {
                 dispatch(setCredentials(response));
-                navigate("/");}
-            if(response.message) setToastProps({ message: response.message, timeout: 5000, isError: false });
+                navigate("/admin");}
         }catch(err){
+            console.log(err)
             if(err && typeof err === "object" && "data" in err){
                 const e = err as { data: { message: string } };
                 setToastProps({ message: e.data.message, timeout: 5000, isError: true });
@@ -52,9 +52,9 @@ const Signin: React.FC = () => {
             </div>
             <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center w-full gap-2 max-w-75 z-50">
                 <div className="w-full">
-                    <label htmlFor='id' className='offscreen'>Id</label>
-                    <input type="text" name='id' className='input-field' placeholder='ID Number' value={formData.id} onChange={handleInputChange} />
-                    {validationErrors.id && <p className='text-[0.65rem] text-red-600 mt-0.5 font-semibold'>{validationErrors.id}</p>}
+                    <label htmlFor='email' className='offscreen'>Email</label>
+                    <input type="text" name='email' className='input-field' placeholder='Email' value={formData.email} onChange={handleInputChange} />
+                    {validationErrors.email && <p className='text-[0.65rem] text-red-600 mt-0.5 font-semibold'>{validationErrors.email}</p>}
                 </div>
                 <div className="w-full">
                     <div className='w-full relative'>

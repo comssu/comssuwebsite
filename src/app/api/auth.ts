@@ -1,10 +1,10 @@
-import type { SigninFormData } from "../../utils/types";
+import type { SigninFormData, SigninReturnType } from "../../utils/types";
 import api from "../apiSlice";
 
 
 const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
-        signIn: builder.mutation<{id: string, email: string}, SigninFormData>({
+        signIn: builder.mutation<SigninReturnType, SigninFormData>({
             query: (body) => ({
                 url: "/auth",
                 method: "POST",
