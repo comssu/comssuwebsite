@@ -26,8 +26,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
   return (
     <div
       key={student?.id}
-      onClick={() => navigate(`/student/${student?.id}`)}
-      className="bg-white p-5 flex flex-col items-center justify-center rounded-xl shadow-sm relative overflow-hidden gap-2 border border-gray-200 cursor-pointer group"
+      className="bg-white p-5 flex flex-col items-center justify-center rounded-xl shadow-sm relative overflow-hidden gap-2 border border-gray-200 cursor-pointer"
     >
       {token && <button
         onClick={() => handleMenuToggle()}
@@ -54,7 +53,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
         </div>
       )}
 
-      <div className="flex flex-col items-center gap-3">
+      <div onClick={() => navigate(`/student/${student?.id}`)} className="flex flex-col items-center gap-3 group">
         <img
           src={student?.profileUrl}
           alt={`${student?.firstname} ${student?.lastname}`}
