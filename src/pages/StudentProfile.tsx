@@ -31,7 +31,7 @@ const StudentProfile: React.FC = () => {
     if (navigator.share && navigator.canShare({ files: [file] })) {
       await navigator.share({
         title: `${data?.firstname}'s ComSSU Profile`,
-        text: "Checkout my ComSSU profile😎✨",
+        // text: "Checkout my ComSSU profile😎✨",
         files: [file],
         url: `https://csunimak.netlify.app/student/${data?.id}`,
       });
