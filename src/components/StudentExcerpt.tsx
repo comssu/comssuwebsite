@@ -25,9 +25,9 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
 
   return (
     <div
-      key={student.id}
-      onClick={() => navigate(`/student/${student.id}`)}
-      className="bg-white px-5 flex flex-col items-center justify-center pb-5 rounded-lg shadow-sm relative overflow-hidden gap-2 border border-gray-200"
+      key={student?.id}
+      onClick={() => navigate(`/student/${student?.id}`)}
+      className="bg-white p-5 flex flex-col items-center justify-center rounded-xl shadow-sm relative overflow-hidden gap-2 border border-gray-200 cursor-pointer group"
     >
       {token && <button
         onClick={() => handleMenuToggle()}
@@ -39,7 +39,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
       {showMenu && (
         <div className="absolute top-10 right-3 bg-white border border-gray-300 rounded-md shadow-md w-28 z-10">
           <Link
-            to={`/admin/edit-member/${student.id}`}
+            to={`/admin/edit-member/${student?.id}`}
             className="block w-full px-4 py-2 text-sm hover:bg-gray-100 rounded-lg"
           >
             Edit
@@ -54,16 +54,16 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
         </div>
       )}
 
-      <div className="flex flex-col items-center gap-3 mt-6">
+      <div className="flex flex-col items-center gap-3">
         <img
-          src={student.profileUrl}
-          alt={`${student.firstname} ${student.lastname}`}
-          className="w-20 h-20 rounded-full object-cover"
+          src={student?.profileUrl}
+          alt={`${student?.firstname} ${student?.lastname}`}
+          className="w-23 h-23 object-top rounded-full object-cover group-hover:scale-110 group-active:scale-0 transition-transform"
         />
         <div className="text-center">
-          <h3 className="font-bold text-sm">{student.firstname} {student.lastname}</h3>
-          <p className="text-[0.7rem] w-full text-gray-500">{student.email.length > 20 ? student.email.slice(0, 20) : student.email}{student.email.length > 20 && "..."}</p>
-          <p className="text-xs text-gray-400">{student.level}</p>
+          <h3 className="font-bold text-sm">{student?.firstname} {student?.lastname}</h3>
+          <p className="text-[0.7rem] w-full text-gray-500">{student?.email.length > 20 ? student?.email.slice(0, 20) : student?.email}{student?.email.length > 20 && "..."}</p>
+          <p className="text-xs text-gray-400">{student?.level}</p>
         </div>
       </div>
     </div>

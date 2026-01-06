@@ -17,3 +17,12 @@ body{
 .input-field {
   @apply border border-[#d0d0d0] bg-[#f6f6f6] w-full rounded-xl text-sm p-2.5 inset-shadow-2xs focus:ring-0 focus:outline-0 placeholder:text-[#bbbbbb]
 }
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
