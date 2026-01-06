@@ -57,7 +57,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
         <img
           src={student?.profileUrl}
           alt={`${student?.firstname} ${student?.lastname}`}
-          className="w-23 h-23 object-top rounded-full object-cover group-hover:scale-110 group-active:scale-0 transition-transform"
+          className="w-23 h-23 object-top rounded-full object-cover group-hover:scale-110 group-active:scale-90 transition-transform"
         />
         <div className="text-center">
           <h3 className="font-bold text-sm">{student?.firstname} {student?.lastname}</h3>
