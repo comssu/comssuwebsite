@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
             <img
               src="/images/home.jpg"
               alt="Department Logo"
-              className="w-10 h-10 rounded-full border-2 border-white shadow-md"
+              className="w-10 h-10 rounded-full border-2 border-white shadow-md cursor-pointer"
               onClick={() => navigate("/")}
             />
         
