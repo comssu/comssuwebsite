@@ -14,6 +14,7 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import { fetchBaseQuery, type BaseQueryApi } from '@reduxjs/toolkit/query';
 import { clearCredentials, setCredentials } from './app/authSlice';
 import { useAppDispatch } from './app/hooks';
+import StudentProfile from './pages/StudentProfile';
 
 const App: React.FC = () => {
 
@@ -44,6 +45,7 @@ const App: React.FC = () => {
       <Route path="/clubs/:clubId" element={<ClubDetail />} />
       <Route path="/events" element={<EventsList />} />
       <Route path="/events/:id" element={<EventDetail />} />
+      <Route path="/student/:id" element={<StudentProfile />} />
       <Route path="/society" element={<Society />} />
       <Route path="/signin" element={<Signin />} />
       <Route element={<ProtectedRoutes />}>

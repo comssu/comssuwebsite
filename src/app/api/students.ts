@@ -5,7 +5,14 @@ export const studentsApi = api.injectEndpoints({
   endpoints: (builder) => ({
     getStudents: builder.query<{ nextCursor: string, students: Member[] }, void>({
       query: () => "/students",
-      providesTags: [{type: "Member" as const, id: "LIST"}]
+      providesTags: (result) => result ? [
+        ...result.students.map(student => ({type: "Member" as const, id: student.id})), {type: "Member" as const, id: "LIST"}
+      ] : [{type: "Member" as const, id: "LIST"}]
+    }),
+
+    getStudent: builder.query<Member, string>({
+      query: (id) => `/students/${id}`,
+      providesTags: (result) => result ? [{type: "Member" as const, id: result.id}] : [{type: "Member" as const, id: "LIST"}]
     }),
 
     addStudent: builder.mutation<Member, FormData>({
@@ -23,7 +30,7 @@ export const studentsApi = api.injectEndpoints({
         method: "PATCH",
         body
       }),
-      invalidatesTags: [{type: "Member" as const, id: "LIST"}]
+      invalidatesTags: (result) => result ? [{type: "Member" as const, id: result.id}] : [{type: "Member" as const, id: "LIST"}]
     }),
 
     deleteStudent: builder.mutation<{ message: string }, string>({
@@ -38,6 +45,7 @@ export const studentsApi = api.injectEndpoints({
 
 export const {
   useGetStudentsQuery,
+  useGetStudentQuery,
   useDeleteStudentMutation,
   useAddStudentMutation,
   useUpdateStudentMutation,

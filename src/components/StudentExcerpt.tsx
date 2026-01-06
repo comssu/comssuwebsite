@@ -26,6 +26,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
   return (
     <div
       key={student.id}
+      onClick={() => navigate(`/student/${student.id}`)}
       className="bg-white px-5 flex flex-col items-center justify-center pb-5 rounded-lg shadow-sm relative overflow-hidden gap-2 border border-gray-200"
     >
       {token && <button
@@ -65,11 +66,6 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
           <p className="text-xs text-gray-400">{student.level}</p>
         </div>
       </div>
-      {/* <div className='flex gap-1'>
-        {student.website && <a href={student.website}><Globe size={20} className='cursor-pointer text-gray-500 hover:text-gray-600 active:text-gray-600 transition-all' /></a>}
-        {student.linkedIn && <a href={student.linkedIn}><Linkedin size={20} className='cursor-pointer text-gray-500 hover:text-gray-600 active:text-gray-600 transition-all' /></a>}
-        {student.github && <a href={student.github}><Github size={20} className='cursor-pointer text-gray-500 hover:text-gray-600 active:text-gray-600 transition-all' /></a>}
-      </div> */}
     </div>
   )
 }
