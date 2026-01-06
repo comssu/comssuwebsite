@@ -216,7 +216,7 @@ const AddMember = () => {
                 </select>
               </div>
 
-              <div>
+              <div className="relative pb-1">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Bio<span className="text-red-600">*</span>
                 </label>
@@ -225,11 +225,13 @@ const AddMember = () => {
                   value={form.about}
                   onChange={handleChange}
                   rows={5}
+                  maxLength={424}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 resize-none"
                 />
+                {form.about && <p className={`absolute -bottom-2.5 right-0 text-[0.7rem] text-bblack ${form.about.length === 424 && "text-rred"}`}>{form.about.length}/424</p>}
               </div>
 
-              <div className="pt-4 border-t">
+              <div className="pt-4 mt-1 border-t">
                 <div className="flex items-center gap-2 mb-4">
                   <LinkIcon className="w-5 h-5 text-gray-400" />
                   <h3 className="font-medium text-gray-700">

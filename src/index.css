@@ -26,3 +26,9 @@ body{
 .hide-scrollbar::-webkit-scrollbar {
   display: none;             /* Chrome, Safari */
 }
+
+@media(max-height: 720px) {
+  .main-image {
+    width: 180px
+  }
+}
