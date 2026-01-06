@@ -74,7 +74,7 @@ const StudentProfile: React.FC = () => {
           <p className='text-gray-300'>{getLevel(data?.level ?? "")}</p>
         </div>
         <div className='relative'>
-          <img src={data?.profileUrl} className='w-50 aspect-square object-square object-top border-6 border-white rounded-full' crossOrigin='anonymous' /> 
+          <img src={data?.profileUrl} className='w-50 aspect-square object-cover object-top border-6 border-white rounded-full' crossOrigin='anonymous' /> 
           <img src={"/images/[000213].png"} className='w-15 absolute bottom-0 right-0 bg-white aspect-square object-contain rounded-full p-1' crossOrigin='anonymous' />         
         </div>
 
