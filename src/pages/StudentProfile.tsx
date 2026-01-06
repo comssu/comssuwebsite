@@ -16,6 +16,15 @@ const StudentProfile: React.FC = () => {
   const shareProfile = async () => {
     if (!profileRef.current) return;
 
+    await Promise.all(
+      Array.from(profileRef.current.querySelectorAll("img")).map(
+        img =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise(res => (img.onload = img.onerror = res))
+      )
+    );
+
     const blob = await htmlToImage.toBlob(profileRef.current, {
       cacheBust: true,
       pixelRatio: 2,
@@ -31,7 +40,7 @@ const StudentProfile: React.FC = () => {
     if (navigator.share && navigator.canShare({ files: [file] })) {
       await navigator.share({
         title: `${data?.firstname}'s ComSSU Profile`,
-        // text: "Checkout my ComSSU profile😎✨",
+        text: "Checkout my ComSSU profile😎✨",
         files: [file],
         url: `https://csunimak.netlify.app/student/${data?.id}`,
       });
@@ -65,8 +74,8 @@ const StudentProfile: React.FC = () => {
           <p className='text-gray-300'>{getLevel(data?.level ?? "")}</p>
         </div>
         <div className='relative'>
-          <img src={data?.profileUrl} className='w-50 border-6 border-white rounded-full' /> 
-          <img src={"/images/[000213].png"} className='w-15 absolute bottom-0 right-0 bg-white aspect-square object-contain rounded-full p-1' />         
+          <img src={data?.profileUrl} className='w-50 border-6 border-white rounded-full' crossOrigin='anonymous' /> 
+          <img src={"/images/[000213].png"} className='w-15 absolute bottom-0 right-0 bg-white aspect-square object-contain rounded-full p-1' crossOrigin='anonymous' />         
         </div>
 
       </div>
