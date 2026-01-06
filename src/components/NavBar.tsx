@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Cpu, Drone, Gpu, MemoryStick, Microchip, Code } from "lucide-react";
 
 const NavBar: React.FC = () => {
 
+  const navigate = useNavigate();
   const [displayIcon, setDisplayIcon] = useState("Cpu");
 
   const linkClasses =
@@ -27,6 +28,7 @@ const NavBar: React.FC = () => {
               src="/images/home.jpg"
               alt="Department Logo"
               className="w-10 h-10 rounded-full border-2 border-white shadow-md"
+              onClick={() => navigate("/")}
             />
         
           </div>
