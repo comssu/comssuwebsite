@@ -5,18 +5,20 @@ import { Loader, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useGetStudentsQuery } from "../../app/api/students";
 import StudentExcerpt from "../../components/StudentExcerpt";
+import clsx from "clsx";
 
 const Dashboard: React.FC = () => {
 
   const { data, isLoading } = useGetStudentsQuery();
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("");
 
   const members = data?.students ?? [];
 
   const filteredMembers = members.filter((student) =>
     `${student.firstname} ${student.lastname} ${student.email}`
       .toLowerCase()
-      .includes(search.toLowerCase())
+      .includes(search.toLowerCase()) && student?.level.includes(filter)
   );
 
   return (
@@ -44,6 +46,14 @@ const Dashboard: React.FC = () => {
               Add Student
             </Link>
           </div>
+        </div>
+
+        <div className="flex w-full gap-1 mb-2">
+          <button onClick={() => setFilter("")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>All</button>
+          <button onClick={() => setFilter("Year 1")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "Year 1" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>Year 1</button>
+          <button onClick={() => setFilter("Year 2")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "Year 2" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>Year 2</button>
+          <button onClick={() => setFilter("Year 3")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "Year 3" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>Year 3</button>
+          <button onClick={() => setFilter("Year 4")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "Year 4" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>Year 4</button>
         </div>
 
         {isLoading ? <div className="w-full flex justify-center items-center"><Loader className="animate-spin" size={17} /></div> : filteredMembers.length === 0 ? (

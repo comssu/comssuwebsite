@@ -33,7 +33,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
   return (
     <div
       key={student?.id}
-      className="bg-white p-5 flex flex-col items-center justify-center rounded-xl shadow-sm relative overflow-hidden gap-2 border border-gray-200 cursor-pointer"
+      className="bg-white p-5 flex flex-col items-center justify-center rounded-xl shadow-sm relative overflow-hidden gap-2 border border-gray-200 cursor-pointer box-border mask-clip-padding"
     >
       {token && <button
         onClick={() => handleMenuToggle()}
@@ -68,7 +68,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
         />
         <div className="text-center">
           <h3 className="font-bold text-sm">{student?.firstname} {student?.lastname}</h3>
-          <p className="text-[0.7rem] w-full text-gray-500">{student?.email.length > 20 ? student?.email.slice(0, 20) : student?.email}{student?.email.length > 20 && "..."}</p>
+          <p className="text-[0.7rem] w-full text-gray-500">{student?.email.length > 20 ? student?.email.split("@")[0].slice(0, 20) : student?.email.split("@")[0]}{student?.email.split("@")[0].length > 20 && "..."}</p>
           <p className="text-xs text-gray-400">{getLevel(student?.level)}</p>
         </div>
       </div>

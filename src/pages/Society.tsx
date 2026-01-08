@@ -4,18 +4,20 @@ import Footer from "../components/Footer";
 import { Loader, Search } from "lucide-react";
 import { useGetStudentsQuery } from "../app/api/students";
 import StudentExcerpt from "../components/StudentExcerpt";
+import clsx from "clsx";
 
 const Society: React.FC = () => {
 
   const { data, isLoading } = useGetStudentsQuery();
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("");
 
   const members = data?.students ?? [];
 
   const filteredMembers = members.filter((student) =>
     `${student.firstname} ${student.lastname} ${student.email}`
       .toLowerCase()
-      .includes(search.toLowerCase())
+      .includes(search.toLowerCase()) && student?.level.includes(filter)
   );
 
   return (
@@ -45,9 +47,16 @@ const Society: React.FC = () => {
             </Link> */}
           </div>
         </div>
+        <div className="flex w-full gap-1 mb-2">
+          <button onClick={() => setFilter("")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>All</button>
+          <button onClick={() => setFilter("Year 1")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "Year 1" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>Year 1</button>
+          <button onClick={() => setFilter("Year 2")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "Year 2" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>Year 2</button>
+          <button onClick={() => setFilter("Year 3")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "Year 3" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>Year 3</button>
+          <button onClick={() => setFilter("Year 4")} className={clsx('text-[0.8rem] border flex-1 px-2 py-1 rounded-full transition-colors shadow-2xs', filter === "Year 4" ? "bg-blue-100 border-blue-500 text-blue-500" : "border-gray-400 text-gray-400")}>Year 4</button>
+        </div>
 
         {isLoading ? <div className="w-full flex justify-center items-center"><Loader className="animate-spin" size={17} /></div> : filteredMembers.length === 0 ? (
-          <p className="text-gray-500 text-center text-sm">No student found!</p>
+          <p className="text-gray-500 text-center text-sm mt-2">No student found!</p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 pb-20 md:pb-0 max-w-5xl mx-auto">
             {filteredMembers.map((student) => (
