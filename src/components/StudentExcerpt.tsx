@@ -72,8 +72,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
           <p className="text-xs text-gray-400">{getLevel(student?.level)}</p>
         </div>
       </div>
-    </div>
-  )
+    </div>)
 }
 
 export default StudentExcerpt

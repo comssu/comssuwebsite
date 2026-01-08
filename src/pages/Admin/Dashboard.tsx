@@ -49,7 +49,7 @@ const Dashboard: React.FC = () => {
         {isLoading ? <div className="w-full flex justify-center items-center"><Loader className="animate-spin" size={17} /></div> : filteredMembers.length === 0 ? (
           <p className="text-gray-500 text-center text-sm">No student found!</p>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 pb-20 md:pb-0 max-w-5xl mx-auto">
             {filteredMembers.map((student) => (
               <StudentExcerpt key={student.id} student={student} />
             ))}
