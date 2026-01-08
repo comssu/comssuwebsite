@@ -55,6 +55,8 @@ const StudentProfile: React.FC = () => {
 
 
   const getLevel = (level: string): string => {
+    if(level === "Year 1") return "First Year";
+    if(level === "Year 2") return "Second Year";
     if(level === "Year 3") return "Qualifying Year";
     if(level === "Year 4") return "Final Year";
     return level; }

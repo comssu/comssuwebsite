@@ -23,6 +23,13 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
     setShowMenu(prev => !prev)
   };
 
+  const getLevel = (level: string): string => {
+  if(level === "Year 1") return "First Year";
+  if(level === "Year 2") return "Second Year";
+  if(level === "Year 3") return "Qualifying Year";
+  if(level === "Year 4") return "Final Year";
+  return level; }
+
   return (
     <div
       key={student?.id}
@@ -62,7 +69,7 @@ const StudentExcerpt: React.FC<{ student: Member }> = ({ student }) => {
         <div className="text-center">
           <h3 className="font-bold text-sm">{student?.firstname} {student?.lastname}</h3>
           <p className="text-[0.7rem] w-full text-gray-500">{student?.email.length > 20 ? student?.email.slice(0, 20) : student?.email}{student?.email.length > 20 && "..."}</p>
-          <p className="text-xs text-gray-400">{student?.level}</p>
+          <p className="text-xs text-gray-400">{getLevel(student?.level)}</p>
         </div>
       </div>
     </div>
