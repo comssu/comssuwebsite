@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import QRCode from "react-qr-code";
 import { useNavigate, useParams } from "react-router-dom"
 import { useGetStudentQuery } from '../app/api/students';
@@ -12,8 +12,11 @@ const StudentProfile: React.FC = () => {
   const navigate = useNavigate();
   const { data, isLoading } = useGetStudentQuery(params.id ?? skipToken);
   const profileRef = useRef<HTMLDivElement | null>(null);
+  const [fileToShare, setFileToShare] = useState<File | null>(null);
 
-  const shareProfile = async () => {
+
+  useEffect(() => {
+  const generateImg = async () => {
     if (!profileRef.current) return;
 
     await Promise.all(
@@ -31,21 +34,32 @@ const StudentProfile: React.FC = () => {
       backgroundColor: "#ffffff",
     });
 
-    if (!blob) return;
+    if (!blob) {
+      console.log("Not blob")
+      return};
 
     const file = new File([blob], `comssuprofile(${data?.firstname}).png`, {
       type: "image/png",
     });
 
-    if (navigator.share && navigator.canShare({ files: [file] })) {
+    setFileToShare(file);
+  }
+  generateImg()
+  }, [data?.firstname, profileRef]);
+
+  const shareProfile = async () => {
+
+    if(!fileToShare) return;
+
+    if (navigator.share && navigator.canShare({ files: [fileToShare] })) {
       await navigator.share({
         title: `${data?.firstname}'s ComSSU Profile`,
         text: "Checkout my ComSSU profile😎✨",
-        files: [file],
+        files: [fileToShare],
         url: `https://csunimak.netlify.app/student/${data?.id}`,
       });
     } else {
-      const url = URL.createObjectURL(blob);
+      const url = URL.createObjectURL(fileToShare);
       const a = document.createElement("a");
       a.href = url;
       a.download = "profile.png";
@@ -72,7 +86,7 @@ const StudentProfile: React.FC = () => {
       <div className='flex-1 flex flex-col items-center gap-3 justify-center pt-4 px-5'>
         <div className='flex flex-col items-center'>
           <p className='text-gray-100'>ComSSU Profile</p>
-          <h2 className='font-extrabold text-white  text-2xl md:text-3xl'>{data?.firstname} {data?.lastname}</h2>
+          <h2 className='font-extrabold text-white  text-2xl text-center'>{data?.firstname} {data?.lastname}</h2>
           <p className='text-gray-300'>{getLevel(data?.level ?? "")}</p>
         </div>
         <div className='relative'>
@@ -113,7 +127,7 @@ const StudentProfile: React.FC = () => {
           {data?.linkedIn && <a href={data?.linkedIn}><Linkedin size={30} className='cursor-pointer text-gray-500 hover:text-gray-600 active:text-gray-600 transition-all' /></a>}
           {data?.github && <a href={data?.github}><Github size={30} className='cursor-pointer text-gray-500 hover:text-gray-600 active:text-gray-600 transition-all' /></a>}
         </div>}
-        <button onClick={shareProfile} className='w-full py-2 bg-blue-900 text-white rounded-full cursor-pointer hover:opacity-95 active:opacity-90'>Share Profile</button>
+        <button onClick={shareProfile} disabled={!fileToShare || !data?.firstname} className='w-full py-2 bg-blue-900 text-white rounded-full cursor-pointer hover:opacity-95 active:opacity-90 flex justify-center items-center text-sm h-10 disabled:cursor-not-allowed'>{(!fileToShare || !data?.firstname) ? <Loader size={17} className='animate-spin' /> : "Share Profile"}</button>
       </div>
     </main>
     </>
