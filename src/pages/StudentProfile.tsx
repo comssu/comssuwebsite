@@ -15,37 +15,45 @@ const StudentProfile: React.FC = () => {
   const [fileToShare, setFileToShare] = useState<File | null>(null);
 
 
-  useEffect(() => {
+useEffect(() => {
+  if (!data || isLoading || !profileRef.current) return;
+
+  const waitForPaint = () =>
+  new Promise<void>(resolve => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => resolve());
+    });
+  });
+
   const generateImg = async () => {
-    if (!profileRef.current) return;
+    await waitForPaint();
 
     await Promise.all(
-      Array.from(profileRef.current.querySelectorAll("img")).map(
-        img =>
-          img.complete
-            ? Promise.resolve()
-            : new Promise(res => (img.onload = img.onerror = res))
+      Array.from(profileRef.current!.querySelectorAll("img")).map(img =>
+        img.decode?.().catch(() => {}) ?? Promise.resolve()
       )
     );
 
-    const blob = await htmlToImage.toBlob(profileRef.current, {
+    await new Promise(res => setTimeout(res, 150));
+
+    const blob = await htmlToImage.toBlob(profileRef.current!, {
       cacheBust: true,
       pixelRatio: 2,
       backgroundColor: "#ffffff",
     });
 
-    if (!blob) {
-      console.log("Not blob")
-      return};
+    if (!blob) return;
 
-    const file = new File([blob], `comssuprofile(${data?.firstname}).png`, {
-      type: "image/png",
-    });
+    setFileToShare(
+      new File([blob], `comssuprofile(${data.firstname}).png`, {
+        type: "image/png",
+      })
+    );
+  };
 
-    setFileToShare(file);
-  }
-  generateImg()
-  }, [data?.firstname, profileRef]);
+  generateImg();
+}, [data?.id, isLoading]);
+
 
   const shareProfile = async () => {
 
