@@ -45,6 +45,9 @@ const StudentProfile: React.FC = () => {
 
   const generateImg = async (retry = false) => {
     try {
+
+      const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+      if (isMobile) await new Promise(res => setTimeout(res, 1200));
       await waitForPaint();
 
       if (profileImgRef.current) {
