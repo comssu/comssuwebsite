@@ -12,11 +12,29 @@ const StudentProfile: React.FC = () => {
   const navigate = useNavigate();
   const { data, isLoading } = useGetStudentQuery(params.id ?? skipToken);
   const profileRef = useRef<HTMLDivElement | null>(null);
+  const profileImgRef = useRef<HTMLImageElement | null>(null);
   const [fileToShare, setFileToShare] = useState<File | null>(null);
 
 
-useEffect(() => {
-  if (!data || isLoading || !profileRef.current) return;
+  const ensureImageReady = async (img: HTMLImageElement) => {
+    if (!img) return;
+
+    // Force reload with CORS-safe request
+    const src = img.src;
+    img.src = "";
+    img.src = src;
+
+    if (!img.complete) {
+      await new Promise(res => {
+        img.onload = img.onerror = () => res(true);
+      });
+    }
+
+    // Ensure pixels are decoded
+    try {
+      await img.decode();
+    } catch(e) {console.log(e)}
+  };
 
   const waitForPaint = () =>
   new Promise<void>(resolve => {
@@ -25,37 +43,45 @@ useEffect(() => {
     });
   });
 
-  const generateImg = async () => {
-    await waitForPaint();
+  const generateImg = async (retry = false) => {
+    try {
+      await waitForPaint();
 
-    await Promise.all( Array.from(profileRef.current!.querySelectorAll("img")).map( img => 
-      img.complete ? Promise.resolve() : new Promise(res => (img.onload = img.onerror = res)) ) );
+      if (profileImgRef.current) {
+        await ensureImageReady(profileImgRef.current);
+      }
 
-    await Promise.all(
-      Array.from(profileRef.current!.querySelectorAll("img")).map(img =>
-        img.decode?.().catch(() => {}) ?? Promise.resolve()
-      )
-    );
+      await new Promise(res => setTimeout(res, 300));
 
-    await new Promise(res => setTimeout(res, 150));
+      const blob = await htmlToImage.toBlob(profileRef.current!, {
+        cacheBust: true,
+        pixelRatio: 2,
+        backgroundColor: "#ffffff",
+      });
 
-    const blob = await htmlToImage.toBlob(profileRef.current!, {
-      cacheBust: true,
-      pixelRatio: 2,
-      backgroundColor: "#ffffff",
-    });
+      if (!blob) throw new Error("Blob generation failed");
 
-    if (!blob) return;
-
-    setFileToShare(
-      new File([blob], `comssuprofile(${data.firstname}).png`, {
-        type: "image/png",
-      })
-    );
+      setFileToShare(
+        new File([blob], `comssuprofile(${data?.firstname}).png`, {
+          type: "image/png",
+        })
+      );
+    } catch (err) {
+      // 🔁 One retry for mobile flakiness
+      console.log(err)
+      if (!retry) {
+        setTimeout(() => generateImg(true), 500);
+      }
+    }
   };
 
+
+
+
+useEffect(() => {
+  if (!data || isLoading || !profileRef.current) return;
   generateImg();
-}, [data, data?.id, isLoading]);
+}, [data?.id]);
 
 
   const shareProfile = async () => {
@@ -101,7 +127,7 @@ useEffect(() => {
           <p className='text-gray-300'>{getLevel(data?.level ?? "")}</p>
         </div>
         <div className='relative'>
-          <img src={data?.profileUrl} className='w-50 aspect-square object-cover object-top border-6 border-white rounded-full' crossOrigin='anonymous' /> 
+          <img src={data?.profileUrl} ref={profileImgRef} className='w-50 aspect-square object-cover object-top border-6 border-white rounded-full' crossOrigin='anonymous' /> 
           <img src={"/images/[000213].png"} className='w-15 absolute bottom-0 right-0 bg-white aspect-square object-contain rounded-full p-1' crossOrigin='anonymous' />         
         </div>
 
