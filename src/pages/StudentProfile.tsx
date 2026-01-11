@@ -28,6 +28,9 @@ useEffect(() => {
   const generateImg = async () => {
     await waitForPaint();
 
+    await Promise.all( Array.from(profileRef.current!.querySelectorAll("img")).map( img => 
+      img.complete ? Promise.resolve() : new Promise(res => (img.onload = img.onerror = res)) ) );
+
     await Promise.all(
       Array.from(profileRef.current!.querySelectorAll("img")).map(img =>
         img.decode?.().catch(() => {}) ?? Promise.resolve()
@@ -52,7 +55,7 @@ useEffect(() => {
   };
 
   generateImg();
-}, [data?.id, isLoading]);
+}, [data, data?.id, isLoading]);
 
 
   const shareProfile = async () => {
