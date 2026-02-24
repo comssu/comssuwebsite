@@ -3,8 +3,15 @@ import api from "../apiSlice";
 
 export const studentsApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    getStudents: builder.query<{ nextCursor: string, students: Member[] }, void>({
-      query: () => "/students",
+    getStudents: builder.query<{ hasMore: boolean, page: number, students: Member[] }, { page: number }>({
+      query: ({ page }) => `/students?page=${page}`,
+      serializeQueryArgs: ({endpointName}) => endpointName,
+      merge: (cachedData, newData, { arg }) => {
+        if(arg.page === 1) return newData;
+        cachedData.students.push(...newData.students);
+        cachedData.hasMore = newData.hasMore;
+      },
+      forceRefetch: ({currentArg, previousArg}) => previousArg?.page !== currentArg?.page,
       providesTags: (result) => result ? [
         ...result.students.map(student => ({type: "Member" as const, id: student.id})), {type: "Member" as const, id: "LIST"}
       ] : [{type: "Member" as const, id: "LIST"}]

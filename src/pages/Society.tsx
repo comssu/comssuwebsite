@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Loader, Search } from "lucide-react";
@@ -8,17 +8,30 @@ import clsx from "clsx";
 
 const Society: React.FC = () => {
 
-  const { data, isLoading } = useGetStudentsQuery();
+  const [page, setPage] = useState<number>(1);
+  const loaderRef = useRef<HTMLDivElement | null>(null);
+  const { data, isLoading, isFetching } = useGetStudentsQuery({page});
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
 
   const members = data?.students ?? [];
+  console.log(members);
 
   const filteredMembers = members.filter((student) =>
     `${student.firstname} ${student.lastname} ${student.email}`
       .toLowerCase()
       .includes(search.toLowerCase()) && student?.level.includes(filter)
   );
+
+  useEffect(() => {
+    if(!loaderRef.current || !data?.hasMore) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if(entry.isIntersecting && !isFetching) setPage(p => p + 1); }, { rootMargin: "100px" });
+
+    observer.observe(loaderRef.current);
+    return () => observer.disconnect();
+  }, [data?.hasMore, isFetching])
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -57,13 +70,15 @@ const Society: React.FC = () => {
 
         {isLoading ? <div className="w-full flex justify-center items-center"><Loader className="animate-spin" size={17} /></div> : filteredMembers.length === 0 ? (
           <p className="text-gray-500 text-center text-sm mt-2">No student found!</p>
-        ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 pb-20 md:pb-0 max-w-5xl mx-auto">
+        ) : (<>
+          <div className={`grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 max-w-5xl mx-auto ${!isFetching && "pb-20 md:pb-0"}`}>
             {filteredMembers.map((student) => (
               <StudentExcerpt key={student.id} student={student} />
             ))}
           </div>
-        )}
+          <div ref={loaderRef}></div>
+          {isFetching && <div className="w-full flex justify-center items-center pt-3 pb-20 md:pb-0"><Loader className="animate-spin" size={17} /></div>}
+        </>)}
       </main>
 
       <Footer />
