@@ -72,13 +72,13 @@ const Dashboard: React.FC = () => {
         {isLoading ? <div className="w-full flex justify-center items-center"><Loader className="animate-spin" size={17} /></div> : filteredMembers.length === 0 ? (
           <p className="text-gray-500 text-center text-sm">No student found!</p>
         ) : (
-          <><div className={`grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 max-w-5xl mx-auto ${!isFetching && "pb-20 md:pb-0"}`}>
+          <><div className={`grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 max-w-5xl mx-auto ${!isFetching && "pb-20 md:pb-3"}`}>
             {filteredMembers.map((student) => (
               <StudentExcerpt key={student.id} student={student} />
             ))}
           </div>
           <div ref={loaderRef}></div>
-          {isFetching && <div className="w-full flex justify-center items-center pt-3 pb-20 md:pb-0"><Loader className="animate-spin" size={17} /></div>}</>
+          {isFetching && <div className="w-full flex justify-center items-center pt-3 pb-20 md:pb-3"><Loader className="animate-spin" size={17} /></div>}</>
         )}
       </main>
 

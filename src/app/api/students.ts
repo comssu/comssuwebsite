@@ -22,6 +22,13 @@ export const studentsApi = api.injectEndpoints({
       providesTags: (result) => result ? [{type: "Member" as const, id: result.id}] : [{type: "Member" as const, id: "LIST"}]
     }),
 
+    getAllStudents: builder.query<Member[], void>({
+      query: () => `/students/all`,
+      providesTags: (result) => result ? [
+        ...result.map(student => ({type: "Member" as const, id: student.id})), {type: "Member" as const, id: "LIST"}
+      ] : [{type: "Member" as const, id: "LIST"}]
+    }),
+
     addStudent: builder.mutation<Member, FormData>({
       query: (body) => ({
         url: "/students",
@@ -56,4 +63,5 @@ export const {
   useDeleteStudentMutation,
   useAddStudentMutation,
   useUpdateStudentMutation,
+  useGetAllStudentsQuery
 } = studentsApi;

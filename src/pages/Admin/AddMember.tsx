@@ -1,9 +1,9 @@
-import { useState, type ChangeEvent } from "react";
+import { useState, useEffect, type ChangeEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import NavBar from "../../components/NavBar";
 import { Plus, Link as LinkIcon, ArrowLeft, UserPen, Loader } from "lucide-react";
 import type { Member } from "../../types/member";
-import { useAddStudentMutation, useUpdateStudentMutation,useGetStudentsQuery } from "../../app/api/students";
+import { useAddStudentMutation, useUpdateStudentMutation, useGetAllStudentsQuery } from "../../app/api/students";
 import Toast from "../../components/Toast";
 import type { ToastProps } from "../../utils/types";
 
@@ -11,29 +11,30 @@ import type { ToastProps } from "../../utils/types";
 const AddMember = () => {
 
   const navigate = useNavigate();
-  const { data } = useGetStudentsQuery();
+  const { data, isLoading: fetchingAllStudents } = useGetAllStudentsQuery();
   const [addStudent, { isLoading: addingStudent }] = useAddStudentMutation();
   const [updateStudent, { isLoading: updatingStudent }] = useUpdateStudentMutation();
   const { id } = useParams<{ id?: string }>();
   const isEdit = Boolean(id);
   const [newprofileUrl, setNewprofileUrl] = useState<string>("");
   const [photo, setPhoto] = useState<File | null>(null);
-  const members = data?.students ?? [];
+  const members = data ?? [];
   const [toastProps, setToastProps] = useState<ToastProps>({ message: null, timeout: 0, isError: false });
   const existingMember = members.find((m) => m.id === id);
+  console.log(existingMember)
   const [form, setForm] = useState<Member>(() => {
     if (isEdit && existingMember) {
       return {
-        id: existingMember.id,
-        firstname: existingMember.firstname,
-        lastname: existingMember.lastname,
-        email: existingMember.email,
-        level: existingMember.level,
-        profileUrl: existingMember.profileUrl || "",
-        website: existingMember.website || "",
-        github: existingMember.github || "",
-        linkedIn: existingMember.linkedIn || "",
-        about: existingMember.about || "",
+        id: existingMember?.id,
+        firstname: existingMember?.firstname,
+        lastname: existingMember?.lastname,
+        email: existingMember?.email,
+        level: existingMember?.level,
+        profileUrl: existingMember?.profileUrl || "",
+        website: existingMember?.website || "",
+        github: existingMember?.github || "",
+        linkedIn: existingMember?.linkedIn || "",
+        about: existingMember?.about || "",
       };
     }
     return {
@@ -48,6 +49,24 @@ const AddMember = () => {
       linkedIn: "",
       about: "",
     }});
+
+useEffect(() => {
+  if (isEdit && existingMember) {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setForm({
+      id: existingMember?.id,
+      firstname: existingMember?.firstname,
+      lastname: existingMember?.lastname,
+      email: existingMember?.email,
+      level: existingMember?.level,
+      profileUrl: existingMember?.profileUrl || "",
+      website: existingMember?.website || "",
+      github: existingMember?.github || "",
+      linkedIn: existingMember?.linkedIn || "",
+      about: existingMember?.about || "",
+    });
+  }
+}, [existingMember, isEdit]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -124,6 +143,10 @@ const AddMember = () => {
       }
     }
   };
+
+  if(fetchingAllStudents && isEdit) return <>
+    <NavBar />
+    <div className="w-full flex justify-center items-center pt-20 pb-20 md:pb-3"><Loader className="animate-spin" size={22} /></div></>
 
   return (
     <>
